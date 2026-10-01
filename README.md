@@ -21,6 +21,8 @@ Static multi-page site — plain HTML + CSS, no build step.
 The HumanRise Corporate Identity (CI) guidelines live in `brand/`:
 - `brand/index.html`: guidelines (web version, served at `/brand/`)
 - `brand/HumanRise-CI-Guidelines.pdf`: guidelines (A4 PDF for print and sharing)
+- `brand/HumanRise-CI-Guidelines.pptx`: guidelines as an editable PowerPoint deck (16:9)
+- `brand/HumanRise-CI-Guidelines-Slides.pdf`: the PowerPoint deck as a PDF
 - `brand/tokens.css`: brand colour, type, radius and shadow variables
 - `brand/assets/`: cleaned logo set (colour, white, Deep Rise, black, email), star colourways, avatar, example photos and partner logos
 
