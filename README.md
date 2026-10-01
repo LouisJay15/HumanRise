@@ -17,6 +17,13 @@ Static multi-page site — plain HTML + CSS, no build step.
 - `hr-styles.css` — site stylesheet
 - `assets/` — logos and imagery
 
+## Brand guidelines
+The HumanRise Corporate Identity (CI) guidelines live in `brand/`:
+- `brand/index.html`: guidelines (web version, served at `/brand/`)
+- `brand/HumanRise-CI-Guidelines.pdf`: guidelines (A4 PDF for print and sharing)
+- `brand/tokens.css`: brand colour, type, radius and shadow variables
+- `brand/assets/`: cleaned logo set (colour, white, Deep Rise, black, email), star colourways, avatar, example photos and partner logos
+
 ## Running locally
 Open `index.html` in a browser, or serve the folder:
 

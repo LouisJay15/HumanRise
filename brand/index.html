@@ -1,0 +1,1739 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>HumanRise Brand Guidelines</title>
+<meta name="description" content="HumanRise Corporate Identity Guidelines v1.0: brand story, logo, colour, typography, voice, applications and partner guidance." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" />
+<style>
+/* Layout: a document that climbs a "rising path" — chapter markers on a dotted trail in a sticky left rail; one reading column (max 880px). */
+:root{
+  --bg:#FFFFFF; --bg-2:#F7F6FB; --bg-3:#F4F7FA;
+  --fg:#23222B; --fg-2:#474557; --muted:#6A6782;
+  --line:#E2E1EA; --trail:#C6C4D6; --panel-border:#E2E1EA;
+  --accent:#7869BC; --accent-text:#5A4E8D; --heading-accent:#456285;
+  --ok:#2F7A57; --no:#B3261E; --code-bg:#F4F7FA; --shadow:rgba(35,34,43,.10);
+  --wm-opacity:1; --logo-light:block; --logo-dark:none;
+  --font:'Roboto', Arial, Helvetica, sans-serif;
+  --mono:'Roboto Mono', ui-monospace, Menlo, Consolas, monospace;
+  /* Fixed brand colours for specimens and mock-ups: these never change with the theme */
+  --c-purple:#7869BC; --c-deep:#456285; --c-blue:#6E86AE; --c-lav:#8E8AAE;
+  --c-ink:#23222B; --c-mist:#F7F6FB; --c-sky:#F4F7FA; --c-line:#E2E1EA; --c-white:#FFFFFF;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121118; --bg-2:#1B1A23; --bg-3:#191D25;
+    --fg:#EDECF4; --fg-2:#C6C4D6; --muted:#A3A0BA;
+    --line:#2C2A37; --trail:#474557; --panel-border:#2C2A37;
+    --accent:#998ECC; --accent-text:#BBB4DD; --heading-accent:#B6C2D6;
+    --ok:#6CC59A; --no:#F2918A; --code-bg:#1B1A23; --shadow:rgba(0,0,0,.45);
+    --wm-opacity:.14; --logo-light:none; --logo-dark:block;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121118; --bg-2:#1B1A23; --bg-3:#191D25;
+  --fg:#EDECF4; --fg-2:#C6C4D6; --muted:#A3A0BA;
+  --line:#2C2A37; --trail:#474557; --panel-border:#2C2A37;
+  --accent:#998ECC; --accent-text:#BBB4DD; --heading-accent:#B6C2D6;
+  --ok:#6CC59A; --no:#F2918A; --code-bg:#1B1A23; --shadow:rgba(0,0,0,.45);
+  --wm-opacity:.14; --logo-light:none; --logo-dark:block;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16.5px/1.65 var(--font);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--accent-text);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3,h4{margin:0;color:var(--fg);text-wrap:balance;letter-spacing:-.015em}
+p{margin:0}
+ul,ol{margin:0;padding-left:1.2em}
+li+li{margin-top:.35em}
+code,.mono{font-family:var(--mono);font-size:.9em}
+.ms{font-family:'Material Symbols Outlined';font-weight:400;font-style:normal;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;-webkit-font-feature-settings:'liga';font-feature-settings:'liga';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}
+.logo-l{display:var(--logo-light)}
+.logo-d{display:var(--logo-dark)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- frame ---------- */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 16px;max-width:1240px;margin:0 auto}
+.topbar img{height:34px;width:auto}
+.topbar a.toc-link{font-size:14px;font-weight:700;text-decoration:none;color:var(--fg-2)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);padding-inline:16px;max-width:1240px;margin:0 auto}
+.rail{display:none}
+main{min-width:0;max-width:880px;width:100%;margin:0 auto}
+@media (min-width:1100px){
+  .topbar{display:none}
+  .layout{grid-template-columns:230px minmax(0,1fr);gap:64px;padding-inline:32px}
+  .rail{display:block;position:sticky;top:env(safe-area-inset-top,0px);align-self:start;max-height:100vh;overflow:auto}
+  main{margin:0}
+}
+.rail-in{display:flex;flex-direction:column;gap:26px;padding-block:32px}
+.rail-in img{width:120px}
+.rail-meta{font-size:12.5px;color:var(--muted);line-height:1.5}
+.toc{list-style:none;margin:0;padding:0;position:relative}
+.toc::before{content:"";position:absolute;left:15px;top:18px;bottom:18px;border-left:2.4px dotted var(--trail)}
+.toc li+li{margin-top:0}
+.toc a{display:flex;align-items:center;gap:12px;padding:5px 0;color:var(--fg-2);font-size:14px;font-weight:500;text-decoration:none;position:relative}
+.toc .mk{width:32px;height:32px;flex:none;border-radius:50%;background:var(--bg);border:2px solid var(--trail);display:grid;place-items:center;font-size:11px;font-weight:800;color:var(--muted);font-variant-numeric:tabular-nums;transition:border-color .2s,background .2s,color .2s}
+.toc a:hover .mk{border-color:var(--accent);color:var(--accent-text)}
+.toc a.active{color:var(--fg);font-weight:700}
+.toc a.active .mk{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* ---------- type ---------- */
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-text)}
+.lead{font-size:1.2rem;line-height:1.6;color:var(--fg-2);max-width:62ch}
+.prose{display:flex;flex-direction:column;gap:.9em;max-width:66ch;color:var(--fg)}
+ul.prose{gap:.45em}
+p.prose{display:block}
+.prose li+li{margin-top:0}
+section[id]{scroll-margin-top:64px}
+.small{font-size:14px;color:var(--muted)}
+h2.ch-title{font-weight:900;font-size:clamp(2rem,1.3rem + 2.6vw,3rem);line-height:1.05;letter-spacing:-.025em}
+h3{font-size:1.4rem;font-weight:700;line-height:1.25}
+h4{font-size:1.02rem;font-weight:700;line-height:1.35}
+.hl{color:var(--accent)}
+
+/* ---------- sections ---------- */
+.chapter{display:flex;flex-direction:column;gap:56px;padding-block:80px 24px;border-top:1px solid var(--line)}
+.ch-head{display:flex;flex-direction:column;gap:14px}
+.ch-num{display:flex;align-items:center;gap:12px}
+.ch-num .mk{width:38px;height:38px;border-radius:50%;border:2px solid var(--c-blue);display:grid;place-items:center;font-size:13px;font-weight:800;color:var(--heading-accent);font-variant-numeric:tabular-nums;background:var(--bg)}
+.block{display:flex;flex-direction:column;gap:18px}
+.block>h3+p,.block>h3+.prose{margin-top:-6px}
+.g2,.g3,.g4{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr))}
+.card{border:1px solid var(--line);border-radius:16px;padding:20px;background:var(--bg-2);display:flex;flex-direction:column;gap:8px;min-width:0}
+.card p{color:var(--fg-2);font-size:15px}
+.card .star{width:54px;height:54px;margin:-6px 0 -2px -6px}
+.card .tag{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.note{border:1px solid var(--line);background:var(--bg-2);border-radius:12px;padding:14px 16px;font-size:14.5px;color:var(--fg-2);display:flex;gap:12px;align-items:flex-start}
+.note .ms{font-size:20px;color:var(--accent);margin-top:1px}
+.note strong{color:var(--fg)}
+.cap{font-size:13.5px;color:var(--muted);margin-top:10px}
+figure{margin:0}
+
+/* ---------- cover ---------- */
+.cover{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:44px;padding-block:56px 72px}
+.cover .wm{position:absolute;right:-90px;top:20px;width:420px;opacity:var(--wm-opacity);pointer-events:none}
+.cover-logo{width:min(360px,78%);position:relative}
+@media (max-width:640px){.cover .wm{width:240px;right:-120px;top:-10px}}
+.cover h1{font-size:clamp(2.6rem,1.5rem + 4.4vw,4.6rem);font-weight:900;line-height:1;letter-spacing:-.03em;position:relative}
+.cover .lead{position:relative}
+.cover-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;border-top:1px solid var(--line);padding-top:20px;position:relative}
+.cover-meta div{display:flex;flex-direction:column;gap:2px}
+.cover-meta dt{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cover-meta dd{margin:0;font-weight:500}
+
+/* contents */
+.contents{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:0 28px;list-style:none;padding:0;margin:0;counter-reset:none}
+.contents li{margin:0;border-top:1px solid var(--line)}
+.contents a{display:grid;grid-template-columns:34px 1fr;gap:4px 10px;padding:12px 0;text-decoration:none;color:var(--fg)}
+.contents .n{font-weight:800;color:var(--heading-accent);font-variant-numeric:tabular-nums;grid-row:span 2}
+.contents .t{font-weight:700}
+.contents .d{font-size:13.5px;color:var(--muted);grid-column:2}
+
+/* ---------- tables ---------- */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+.tbl-wrap table{min-width:540px}
+th,td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+th{font-weight:700;background:var(--bg-2);font-size:13px;letter-spacing:.02em}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.glance th{width:34%;background:var(--bg-2);font-size:14px}
+.pill{display:inline-flex;align-items:center;gap:4px;font-size:12.5px;font-weight:700;padding:2px 9px;border-radius:999px;white-space:nowrap}
+.pill.ok{color:var(--ok);background:color-mix(in srgb,var(--ok) 13%,transparent)}
+.pill.no{color:var(--no);background:color-mix(in srgb,var(--no) 13%,transparent)}
+.pill.mid{color:var(--accent-text);background:color-mix(in srgb,var(--accent) 14%,transparent)}
+.chip{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:6px;border:1px solid rgba(0,0,0,.08)}
+
+/* ---------- logo specimens ---------- */
+.spec{border:1px solid var(--panel-border);border-radius:16px;overflow:hidden;background:var(--c-white)}
+.spec-art{display:grid;place-items:center;padding:clamp(24px,6vw,56px)}
+.anat{position:relative;width:min(100%,620px);margin:0 auto}
+.anat svg{position:absolute;inset:0;width:100%;height:100%}
+.anat .g{stroke:var(--c-purple);stroke-width:1.4;stroke-dasharray:6 5;fill:none;vector-effect:non-scaling-stroke;opacity:.85}
+.pin{position:absolute;transform:translate(-50%,-50%);width:26px;height:26px;border-radius:50%;background:var(--c-deep);color:#fff;font-size:12.5px;font-weight:800;display:grid;place-items:center;box-shadow:0 0 0 3px #fff}
+.read{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:18px 28px}
+.read li{display:grid;grid-template-columns:30px 1fr;gap:4px 12px;margin:0;align-content:start}
+.read .pn{width:26px;height:26px;border-radius:50%;background:var(--c-deep);color:#fff;font-size:12.5px;font-weight:800;display:grid;place-items:center;grid-row:span 2;margin-top:2px}
+.read .pn.ai{background:var(--c-purple);font-size:9.5px;letter-spacing:-.02em}
+.read h4{font-size:1rem}
+.read p{font-size:14.5px;color:var(--fg-2)}
+
+.flow{border-radius:14px;overflow:hidden;border:1px solid var(--panel-border)}
+.flow-bar{height:64px;background:linear-gradient(90deg,#8E8AAE 0%,#7869BC 34%,#6E86AE 66%,#456285 100%)}
+.flow-labels{display:grid;grid-template-columns:repeat(4,1fr);background:var(--bg)}
+.flow-labels div{padding:10px 12px;font-size:12.5px;border-left:1px solid var(--line);min-width:0}
+.flow-labels div:first-child{border-left:0}
+.flow-labels b{display:block;font-size:13.5px}
+.flow-labels span{color:var(--muted)}
+.flow-ends{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;border-top:1px solid var(--line);font-size:13px;font-weight:700;background:var(--bg-2)}
+.flow-ends span:first-child{color:var(--accent-text)}
+.flow-ends span:last-child{color:var(--heading-accent);text-align:right}
+
+.versions{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:14px}
+.ver{display:flex;flex-direction:column;gap:10px;min-width:0}
+.ver-art{aspect-ratio:4/3;border-radius:12px;display:grid;place-items:center;border:1px solid var(--panel-border);overflow:hidden}
+.ver-art img{width:62%}
+.ver-art img.st{width:42%}
+.ver h4{font-size:15px}
+.ver p{font-size:13.5px;color:var(--fg-2)}
+
+.clear-wrap{container-type:inline-size;width:100%;max-width:520px;margin:0 auto}
+.clear{position:relative;padding:8.75cqi;border:1.5px dashed var(--c-purple);border-radius:4px;background:var(--c-white)}
+.clear img{width:100%;outline:1px solid rgba(120,105,188,.35)}
+.xu{position:absolute;width:4.38cqi;aspect-ratio:1;background:rgba(120,105,188,.22);border:1px solid rgba(120,105,188,.6);display:grid;place-items:center;font-size:clamp(7px,1.6vw,10px);font-weight:800;color:var(--c-deep)}
+
+.dd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));gap:16px}
+.dd{display:flex;flex-direction:column;gap:10px;min-width:0}
+.dd-art{aspect-ratio:4/3;border-radius:12px;display:grid;place-items:center;overflow:hidden;border:1px solid var(--panel-border);background:var(--c-white);position:relative}
+.dd-art img{width:64%}
+.dd figcaption{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--fg-2);line-height:1.45}
+.dd figcaption svg{width:18px;height:18px;flex:none;margin-top:1px}
+.dd.ok figcaption svg{color:var(--ok)}
+.dd.no figcaption svg{color:var(--no)}
+.dd figcaption b{color:var(--fg)}
+/* misuse treatments */
+.m-stretch img{width:74%;height:44%;object-fit:fill}
+.m-recolour img{filter:hue-rotate(140deg) saturate(1.8)}
+.m-rotate img{transform:rotate(-16deg)}
+.m-fx img{filter:drop-shadow(5px 6px 0 rgba(0,0,0,.35)) drop-shadow(0 0 10px rgba(255,200,0,.9))}
+.m-busy{background:url(assets/photos/team-1.jpg) center/cover}
+.m-busy img{width:70%}
+.m-split{display:flex;align-items:center;justify-content:center;gap:4%;padding:0 6%}
+.m-split span{display:block;background-image:url(assets/logo/humanrise-logo-colour.png);background-repeat:no-repeat}
+.m-split .hu{width:58%;aspect-ratio:1690/530;background-size:102.4% auto;background-position:58.5% 3.5%}
+.m-split .ri{width:30%;aspect-ratio:1050/495;background-size:164.9% auto;background-position:51.4% 96.9%}
+.m-retype{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:clamp(20px,4.6vw,30px);color:#7869BC}
+.m-retype small{font-family:var(--font);font-style:normal;font-weight:900;color:#456285;letter-spacing:.2em;font-size:.6em;display:block;text-align:center}
+.m-outline img{filter:drop-shadow(1px 0 0 #23222B) drop-shadow(-1px 0 0 #23222B) drop-shadow(0 1px 0 #23222B) drop-shadow(0 -1px 0 #23222B)}
+
+/* ---------- colour ---------- */
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:14px}
+.sw{border-radius:16px;overflow:hidden;border:1px solid var(--panel-border);display:flex;flex-direction:column;background:var(--bg);min-width:0}
+.sw-chip{height:118px;padding:14px 16px;display:flex;flex-direction:column;justify-content:flex-end;gap:2px}
+.sw-chip b{font-size:17px}
+.sw-chip span{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.9}
+.t-l{color:#FFFFFF}.t-d{color:#23222B}
+.sw-body{padding:12px 16px 16px;display:flex;flex-direction:column;gap:10px}
+.sw-body p{font-size:13.5px;color:var(--fg-2)}
+.sw-body dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:12.5px}
+.sw-body dt{color:var(--muted);font-weight:700;letter-spacing:.06em}
+.sw-body dd{margin:0;font-family:var(--mono)}
+.minis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:14px}
+.mini{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:12px;padding:10px;min-width:0}
+.mini i{width:44px;height:44px;border-radius:10px;flex:none;border:1px solid rgba(0,0,0,.08)}
+.mini b{display:block;font-size:14px}
+.mini span{font-size:12.5px;color:var(--muted);font-family:var(--mono)}
+.mini p{font-size:12.5px;color:var(--muted)}
+.ratio{display:flex;height:56px;border-radius:12px;overflow:hidden;border:1px solid var(--panel-border)}
+.ratio div{display:flex;align-items:flex-end;padding:6px 8px;font-size:11.5px;font-weight:700;min-width:0;overflow:hidden;white-space:nowrap}
+.ramps{display:flex;flex-direction:column;gap:14px}
+.ramp-wrap{overflow-x:auto}
+.ramp-row{display:grid;grid-template-columns:110px repeat(9,minmax(0,1fr));gap:4px;min-width:640px;align-items:stretch}
+.ramp-row>b{font-size:13px;align-self:center}
+.ramp-row>div{aspect-ratio:1/1;border-radius:8px;padding:6px;display:flex;flex-direction:column;justify-content:space-between;font:500 10px/1.2 var(--mono);border:1px solid rgba(0,0,0,.06)}
+.ramp-row>div.core{outline:2.5px solid var(--fg);outline-offset:1px}
+.ramp-row em{font-style:normal;font-weight:700;font-family:var(--font);font-size:10.5px;opacity:.85}
+
+/* ---------- type ---------- */
+.specimen{border:1px solid var(--line);border-radius:16px;padding:clamp(20px,4vw,36px);display:flex;flex-direction:column;gap:18px;background:var(--bg-2)}
+.specimen .big{font-size:clamp(3rem,2rem + 6vw,6.2rem);font-weight:900;line-height:.95;letter-spacing:-.035em;color:var(--fg)}
+.specimen .abc{font-size:clamp(1.1rem,1rem + 1vw,1.6rem);letter-spacing:.02em;color:var(--fg-2);word-break:break-word}
+.weights{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,140px),1fr));gap:14px}
+.weights div{border-top:1px solid var(--line);padding-top:10px}
+.weights b{display:block;font-size:30px;line-height:1.1;color:var(--fg)}
+.weights span{font-size:13px;color:var(--muted)}
+.scale td:first-child{white-space:nowrap}
+.scale .s{color:var(--fg);line-height:1.15}
+
+/* ---------- elements ---------- */
+.stars{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:14px}
+.star-t{display:flex;flex-direction:column;gap:8px;min-width:0}
+.star-t .art{aspect-ratio:1;border-radius:14px;display:grid;place-items:center;border:1px solid var(--panel-border)}
+.star-t .art img{width:68%}
+.star-t b{font-size:14.5px}
+.star-t span{font-size:12.5px;color:var(--muted)}
+.path-steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.path-steps li{position:relative;padding-top:56px;margin:0;display:flex;flex-direction:column;gap:6px}
+.path-steps .mk{position:absolute;top:0;left:0;width:38px;height:38px;border-radius:50%;background:var(--bg);border:2px solid var(--c-blue);display:grid;place-items:center;font-weight:800;font-size:14px;color:var(--heading-accent)}
+.path-steps li:not(:last-child)::after{content:"";position:absolute;top:18px;left:48px;right:-12px;border-top:2.4px dotted var(--trail)}
+.path-steps h4{font-size:1.02rem}
+.path-steps p{font-size:14.5px;color:var(--fg-2)}
+@media (max-width:640px){
+  .path-steps{grid-template-columns:1fr;gap:0}
+  .path-steps li{padding:0 0 26px 56px}
+  .path-steps li:not(:last-child)::after{top:44px;left:18px;bottom:4px;right:auto;border-top:0;border-left:2.4px dotted var(--trail)}
+}
+.btn-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.b{display:inline-flex;align-items:center;gap:8px;font:700 15px/1 var(--font);letter-spacing:.03em;padding:15px 28px;border-radius:12px;white-space:nowrap}
+.b-primary{background:#7869BC;color:#FFFFFF;box-shadow:0 8px 22px rgba(120,105,188,.28)}
+.b-secondary{background:#FFFFFF;color:#456285;border:1.6px solid #6E86AE;padding:13.4px 26px}
+.b-light{background:#FFFFFF;color:#456285}
+.ondark{background:#456285;border-radius:16px;padding:22px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.icons{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr));gap:12px}
+.ic-t{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;padding:16px 8px;border:1px solid var(--line);border-radius:14px;min-width:0}
+.ic-box{width:50px;height:50px;border-radius:13px;background:#FFFFFF;display:grid;place-items:center;box-shadow:0 6px 16px rgba(69,98,133,.16)}
+.ic-box .ms{font-size:26px}
+.ic-t b{font-size:13px}
+.ic-t code{font-size:11px;color:var(--muted)}
+.shape-demo{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:14px}
+.shape-demo div{border:1px solid var(--line);background:var(--bg-2);padding:16px;display:flex;flex-direction:column;gap:4px;min-height:110px;justify-content:flex-end}
+.shape-demo b{font-size:14px}
+.shape-demo span{font-size:12.5px;color:var(--muted)}
+
+/* ---------- photography ---------- */
+.photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:14px}
+.photos figure img{aspect-ratio:4/3;object-fit:cover;border-radius:16px;width:100%}
+.photos figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+.overlay-demo{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:21/9;min-height:190px}
+.overlay-demo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.overlay-demo .ov{position:absolute;inset:0;background:linear-gradient(90deg,rgba(69,98,133,.88) 0%,rgba(69,98,133,.55) 55%,rgba(69,98,133,0) 100%)}
+.overlay-demo .tx{position:relative;padding:clamp(18px,4vw,36px);color:#fff;display:flex;flex-direction:column;gap:8px;max-width:440px;height:100%;justify-content:center}
+.overlay-demo .tx b{font-size:clamp(22px,3.4vw,32px);font-weight:900;line-height:1.05;letter-spacing:-.02em}
+.overlay-demo .tx span{font-size:14px;opacity:.95}
+.dolist{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.dolist>div{border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.dolist h4{display:flex;align-items:center;gap:8px}
+.dolist h4 svg{width:20px;height:20px}
+.dolist .yes h4 svg{color:var(--ok)}
+.dolist .nope h4 svg{color:var(--no)}
+.dolist ul{font-size:14.5px;color:var(--fg-2)}
+
+/* ---------- voice ---------- */
+.ba{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.ba>div{padding:16px 18px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.ba>div+div{border-left:1px solid var(--line)}
+@media (max-width:640px){.ba>div+div{border-left:0;border-top:1px solid var(--line)}}
+.ba .lbl{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+.ba .lbl svg{width:16px;height:16px}
+.ba .before .lbl{color:var(--no)}
+.ba .after .lbl{color:var(--ok)}
+.ba .before p{color:var(--muted)}
+.ba .after{background:var(--bg-2)}
+.ba .ctx{grid-column:1/-1;padding:10px 18px;background:var(--bg-3);border-bottom:1px solid var(--line);font-size:13px;font-weight:700;color:var(--fg-2);border-left:0}
+.ba-list{display:flex;flex-direction:column;gap:16px}
+.boiler{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.boiler>div{padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.boiler>div+div{border-top:1px solid var(--line)}
+.boiler .lbl{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.boiler p.txt{font-size:15.5px}
+
+/* ---------- mock-ups ---------- */
+.mocks{display:grid;gap:18px}
+.mocks.three{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.mocks.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.mock{container-type:inline-size;position:relative;overflow:hidden;border-radius:10px;box-shadow:0 1px 2px rgba(0,0,0,.08),0 12px 30px var(--shadow);background:#FFFFFF;color:#23222B;font-family:var(--font)}
+.mock .wm{position:absolute;pointer-events:none}
+.sq{aspect-ratio:1/1}
+/* social: hiring */
+.p-hire{padding:8%;display:flex;flex-direction:column}
+.p-hire .wm{width:78cqi;right:-22cqi;top:-14cqi;opacity:1}
+.p-hire .lg{width:24cqi;position:relative}
+.p-hire .body{margin-top:auto;position:relative;display:flex;flex-direction:column;gap:2.4cqi}
+.p-hire .k{font-size:3.6cqi;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#7869BC}
+.p-hire .t{font-size:9.4cqi;font-weight:900;line-height:1;letter-spacing:-.02em}
+.p-hire .m{font-size:4.2cqi;color:#456285;font-weight:500}
+.p-hire .cta{align-self:flex-start;margin-top:2cqi;background:#7869BC;color:#fff;font-size:3.6cqi;font-weight:700;padding:2.6cqi 4.4cqi;border-radius:2.4cqi}
+/* social: training */
+.p-train{background:#456285;color:#fff;padding:8%;display:flex;flex-direction:column}
+.p-train>*+*{margin-top:3cqi}
+.p-train .wm{width:70cqi;right:-16cqi;bottom:-14cqi}
+.p-train .lg{width:22cqi;position:relative}
+.p-train .k{font-size:3.4cqi;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#DAE0EA;margin-top:auto;position:relative}
+.p-train .t{font-size:9cqi;font-weight:900;line-height:1;letter-spacing:-.02em;position:relative}
+.p-train .badge{align-self:flex-start;border:.4cqi solid rgba(255,255,255,.75);border-radius:99px;font-size:3.2cqi;font-weight:700;padding:1.2cqi 3cqi;position:relative}
+.p-train .s{font-size:4cqi;color:#EDF0F5;position:relative;max-width:70cqi}
+.p-train .f{font-size:3.2cqi;color:#DAE0EA;position:relative;border-top:.3cqi solid rgba(255,255,255,.3);padding-top:2.4cqi;margin-top:1cqi}
+/* social: values quote */
+.p-quote{background:#7869BC;color:#fff;padding:8%;display:flex;flex-direction:column}
+.p-quote>*+*{margin-top:3cqi}
+.p-quote .wm{width:62cqi;right:-12cqi;top:-10cqi}
+.p-quote .q{font-size:9.2cqi;font-weight:900;line-height:1.02;letter-spacing:-.02em;margin-top:auto;position:relative}
+.p-quote .s{font-size:3.8cqi;color:#EEEBF8;position:relative}
+.p-quote .lg{width:20cqi;position:relative;margin-top:3cqi}
+/* web hero */
+.web{aspect-ratio:16/10}
+.web-bar{height:5.4cqi;background:#F1F0F5;display:flex;align-items:center;gap:1.1cqi;padding:0 2cqi;border-bottom:1px solid #E2E1EA}
+.web-bar i{width:1.4cqi;height:1.4cqi;border-radius:50%;background:#C6C4D6}
+.web-bar span{margin-left:2cqi;background:#fff;border-radius:99px;font-size:1.8cqi;padding:.5cqi 2.4cqi;color:#6A6782}
+.web-nav{display:flex;align-items:center;gap:2.6cqi;padding:2cqi 4cqi;border-bottom:1px solid #E2E1EA;font-size:1.7cqi;font-weight:500;color:#33485F}
+.web-nav img{width:9cqi;margin-right:auto}
+.web-nav .on{color:#7869BC;font-weight:700}
+.web-nav .btn{background:#7869BC;color:#fff;padding:1cqi 2.2cqi;border-radius:1.2cqi;font-weight:700}
+.web-hero{position:relative;padding:5cqi 6cqi;display:flex;flex-direction:column;gap:1.8cqi}
+.web-hero .wm{width:38cqi;right:2cqi;top:4cqi}
+.web-hero .k{font-size:1.7cqi;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#7869BC;position:relative}
+.web-hero .h{font-size:7.6cqi;font-weight:900;line-height:1;letter-spacing:-.025em;position:relative}
+.web-hero .h span{color:#7869BC}
+.web-hero .s{font-size:2.2cqi;color:#33485F;max-width:56cqi;line-height:1.55;position:relative}
+.web-hero .ctas{display:flex;gap:1.6cqi;margin-top:1cqi;position:relative}
+.web-hero .ctas span{font-size:1.8cqi;font-weight:700;padding:1.6cqi 3.2cqi;border-radius:1.4cqi}
+.web-hero .c1{background:#7869BC;color:#fff}
+.web-hero .c2{border:.25cqi solid #6E86AE;color:#456285}
+/* business card */
+.card-mock{aspect-ratio:90/55;border-radius:6px}
+.bc-front{display:grid;place-items:center}
+.bc-front img{width:46cqi}
+.bc-back{background:#456285;color:#fff;padding:8% 9%;display:flex;flex-direction:column;justify-content:center}
+.bc-back>*+*{margin-top:1.2cqi}
+.bc-back .wm{width:52cqi;right:-12cqi;bottom:-16cqi;opacity:1}
+.bc-back .n{font-size:6.6cqi;font-weight:700;position:relative}
+.bc-back .r{font-size:3.8cqi;color:#DDD9EE;position:relative;margin-bottom:3cqi}
+.bc-back .c{font-size:3.6cqi;line-height:1.6;position:relative}
+.bc-back .tg{font-size:3.6cqi;font-weight:700;color:#DDD9EE;position:relative;margin-top:3cqi}
+/* letterhead */
+.a4{aspect-ratio:210/297;padding:9.5% 9.5% 0;display:flex;flex-direction:column}
+.a4>*+*{margin-top:3cqi}
+.a4 .top{display:flex;justify-content:space-between;align-items:flex-start;gap:4cqi}
+.a4 .top img{width:22cqi}
+.a4 .top div{font-size:1.9cqi;line-height:1.6;text-align:right;color:#474557}
+.a4 .meta{font-size:2.1cqi;color:#474557;margin-top:6cqi;line-height:1.6}
+.a4 .ttl{font-size:4.2cqi;font-weight:900;letter-spacing:-.02em;color:#23222B;margin-top:2cqi}
+.a4 .lines{display:flex;flex-direction:column;gap:1.6cqi;margin-top:1cqi}
+.a4 .lines i{display:block;height:1.2cqi;border-radius:1cqi;background:#E2E1EA}
+.a4 .lines i.s{width:72%}
+.a4 .foot{margin-top:auto;border-top:.25cqi solid #E2E1EA;padding:2.6cqi 0 6cqi;font-size:1.7cqi;line-height:1.6;color:#6A6782;position:relative}
+.a4 .wm{width:44cqi;right:-14cqi;bottom:-12cqi}
+/* slides */
+.slide{aspect-ratio:16/9;padding:6% 7%;display:flex;flex-direction:column}
+.slide>*+*{margin-top:1.6cqi}
+.slide .wm{width:46cqi;right:-8cqi;top:-6cqi}
+.slide .k{font-size:1.8cqi;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#7869BC;margin-top:auto;position:relative}
+.slide .t{font-size:6cqi;font-weight:900;line-height:1;letter-spacing:-.025em;max-width:62cqi;position:relative}
+.slide .s{font-size:2.4cqi;color:#33485F;position:relative}
+.slide .lg{width:10cqi;margin-top:auto;position:relative}
+.slide2{aspect-ratio:16/9;padding:6% 7%;display:flex;flex-direction:column}
+.slide2>*+*{margin-top:3cqi}
+.slide2 .t{font-size:4.2cqi;font-weight:900;letter-spacing:-.02em}
+.slide2 ol{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:3cqi;position:relative}
+.slide2 li{margin:0;padding-top:7cqi;position:relative;font-size:2.2cqi;color:#33485F;line-height:1.45}
+.slide2 li b{display:block;color:#23222B;font-size:2.5cqi;margin-bottom:.6cqi}
+.slide2 li span.mk{position:absolute;top:0;left:0;width:5cqi;height:5cqi;border-radius:50%;border:.3cqi solid #6E86AE;display:grid;place-items:center;font-weight:800;font-size:2cqi;color:#456285;background:#fff}
+.slide2 li:not(:last-child)::after{content:"";position:absolute;top:2.5cqi;left:6.4cqi;right:-2cqi;border-top:.35cqi dotted #C6C4D6}
+.slide2 .ft{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-size:1.6cqi;color:#6A6782}
+.slide2 .ft img{width:7cqi}
+/* pull-up banner */
+.banner-wrap{display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:560px){.banner-wrap{grid-template-columns:minmax(0,1fr)}.banner-wrap .mock{max-width:220px}}
+.banner{aspect-ratio:85/200;display:flex;flex-direction:column;padding:12% 10% 0}
+.banner>*+*{margin-top:5cqi}
+.banner .lg{width:72cqi;margin:0 auto}
+.banner .h{font-size:12.5cqi;font-weight:900;line-height:1;letter-spacing:-.02em;text-align:center;margin-top:6cqi}
+.banner .h span{color:#7869BC}
+.banner .s{font-size:5.4cqi;text-align:center;color:#456285;font-weight:500;line-height:1.4}
+.banner .ph{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6cqi;margin-top:3cqi}
+.banner .bt{margin:auto -12.5cqi 0;background:#456285;color:#fff;text-align:center;padding:9cqi 4cqi 26cqi;font-size:6cqi;font-weight:700;position:relative}
+.banner .bt::after{content:"";position:absolute;left:0;right:0;bottom:0;height:20cqi;background:repeating-linear-gradient(135deg,rgba(255,255,255,.12) 0 2cqi,transparent 2cqi 4cqi)}
+/* linkedin banner + avatar */
+.li-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.li-banner{aspect-ratio:1128/191;background:#7869BC;color:#fff;display:flex;align-items:center;justify-content:flex-end;padding:0 6%;border-radius:10px 10px 0 0;box-shadow:none}
+.li-banner .wm{width:30cqi;left:24cqi;top:-6cqi;opacity:1}
+.li-banner div{position:relative;text-align:right;display:flex;flex-direction:column;gap:.6cqi}
+.li-banner b{font-size:4.6cqi;font-weight:900;letter-spacing:-.02em;line-height:1}
+.li-banner span{font-size:1.8cqi;color:#EEEBF8}
+.li-under{display:flex;align-items:flex-end;gap:14px;padding:0 0 0 4%;margin-top:-34px;position:relative}
+.li-under img{width:84px;height:84px;border-radius:12px;border:4px solid var(--bg);box-shadow:0 2px 8px var(--shadow)}
+.li-under div{padding-bottom:6px}
+.li-under b{display:block;font-size:16px}
+.li-under span{font-size:13px;color:var(--muted)}
+/* email signature */
+.sig{background:#FFFFFF;border:1px solid var(--panel-border);border-radius:14px;padding:22px;overflow-x:auto}
+.sig-in{display:flex;gap:16px;font-family:Arial,Helvetica,sans-serif;color:#23222B;min-width:420px}
+.sig-in .l{padding-right:16px;border-right:2px solid #7869BC}
+.sig-in .l img{width:120px}
+.sig-in .r{font-size:13px;line-height:1.5}
+.sig-in .r strong{font-size:15px;color:#456285;display:block}
+.sig-in .r .role{color:#6A6782}
+.sig-in .r .web{color:#5A4E8D;font-weight:bold}
+.sig-in .r .tag{color:#7869BC;font-weight:bold}
+.sig-legal{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6A6782;margin-top:14px;max-width:560px;min-width:420px;line-height:1.5}
+/* job advert */
+.ad{border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.ad-head{padding:20px 22px;background:var(--bg-2);border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:4px}
+.ad-head .k{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text)}
+.ad-head b{font-size:1.5rem;font-weight:900;letter-spacing:-.02em}
+.ad-head span{color:var(--fg-2);font-size:14.5px}
+.ad-body{padding:18px 22px 22px;display:grid;gap:16px}
+.ad-sec{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:6px 20px}
+@media (max-width:640px){.ad-sec{grid-template-columns:minmax(0,1fr)}}
+.ad-sec h4{font-size:14.5px}
+.ad-sec div{font-size:14.5px;color:var(--fg-2);display:flex;flex-direction:column;gap:6px}
+.ad-sec .eg{font-size:13px;color:var(--muted)}
+/* co-branding */
+.lockup{display:flex;align-items:center;justify-content:center;gap:clamp(14px,4vw,32px);padding:clamp(20px,5vw,40px);background:#FFFFFF}
+.lockup .hr{width:clamp(110px,26vw,170px)}
+.lockup .div{width:1.5px;align-self:stretch;background:#C6C4D6;margin-block:8px}
+.lockup .cc{width:clamp(78px,17vw,108px)}
+.endorse{display:flex;align-items:center;justify-content:center;gap:14px;padding:22px;background:#FFFFFF;font-family:var(--font);font-size:13px;color:#6A6782;flex-wrap:wrap}
+.endorse img{width:96px}
+/* code */
+.code{position:relative;background:var(--code-bg);border:1px solid var(--line);border-radius:12px}
+.code pre{margin:0;padding:44px 16px 16px;overflow-x:auto;font:12.5px/1.6 var(--mono);color:var(--fg);white-space:pre}
+.copy{position:absolute;top:8px;right:8px;font:700 12.5px var(--font);color:var(--accent-text);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
+.copy:hover{border-color:var(--accent)}
+/* checklist */
+.check{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0}
+.check li{display:grid;grid-template-columns:22px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--line);margin:0;font-size:15px}
+.check li::before{content:"";width:18px;height:18px;border:2px solid var(--trail);border-radius:5px;margin-top:3px}
+.open{counter-reset:o;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0}
+.open li{counter-increment:o;display:grid;grid-template-columns:34px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--line);margin:0}
+.open li::before{content:counter(o);width:28px;height:28px;border-radius:50%;border:2px solid var(--c-blue);display:grid;place-items:center;font-size:12px;font-weight:800;color:var(--heading-accent)}
+.open b{display:block}
+.open span{font-size:14.5px;color:var(--fg-2)}
+footer.end{padding-block:48px 64px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+footer.end img{width:110px}
+footer.end p{font-size:13.5px;color:var(--muted)}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* ---------- print / PDF ---------- */
+@page{size:A4;margin:14mm 14mm 16mm}
+@media print{
+  :root,:root[data-theme="dark"],:root:not([data-theme="light"]){
+    --bg:#FFFFFF; --bg-2:#F7F6FB; --bg-3:#F4F7FA; --fg:#23222B; --fg-2:#474557; --muted:#6A6782;
+    --line:#E2E1EA; --trail:#C6C4D6; --panel-border:#E2E1EA; --accent:#7869BC; --accent-text:#5A4E8D;
+    --heading-accent:#456285; --ok:#2F7A57; --no:#B3261E; --code-bg:#F4F7FA; --shadow:rgba(35,34,43,.10);
+    --wm-opacity:1; --logo-light:block; --logo-dark:none; color-scheme:light;
+  }
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{font-size:14px}
+  .topbar,.rail,.copy{display:none!important}
+  .layout{display:block;padding:0;max-width:none}
+  main{max-width:none}
+  .cover{min-height:262mm;justify-content:center;padding-block:0;break-after:page}
+  .cover .wm{width:520px;right:-140px}
+  .chapter{break-before:page;border-top:0;padding-block:0 8px}
+  #contents{break-before:auto}
+  .chapter.cont{break-before:auto;padding-top:40px}
+  .card,.sw,.ver,.dd,.mock,figure,.note,.ba,.boiler>div,.ad-sec,.star-t,.ic-t,tr,.lockup,.endorse,.sig,.open li,.check li,.path-steps,.dolist>div,.read li,.mini,.specimen,.ramps,.ratio,.flow,.overlay-demo{break-inside:avoid}
+  .chapter{gap:30px}
+  .block{gap:14px}
+  .tbl-wrap{border-radius:0;border-left:0;border-right:0}
+  h3,h4{break-after:avoid}
+  .code pre{white-space:pre-wrap;word-break:break-all;padding-top:16px}
+  .tbl-wrap{overflow:visible}
+  .tbl-wrap table,.ramp-row,.sig-in,.sig-legal{min-width:0}
+  a{text-decoration:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-ok" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></symbol>
+  <symbol id="i-no" viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a href="#top" aria-label="Back to the cover">
+      <img class="logo-l" src="assets/logo/humanrise-logo-colour.png" alt="HumanRise" />
+      <img class="logo-d" src="assets/logo/humanrise-logo-white.png" alt="HumanRise" />
+    </a>
+    <a class="toc-link" href="#contents">Contents</a>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="rail" aria-label="Chapters">
+    <div class="rail-in">
+      <a href="#top" aria-label="Back to the cover">
+        <img class="logo-l" src="assets/logo/humanrise-logo-colour.png" alt="HumanRise" />
+        <img class="logo-d" src="assets/logo/humanrise-logo-white.png" alt="HumanRise" />
+      </a>
+      <ol class="toc">
+        <li><a href="#intro"><span class="mk">01</span>Introduction</a></li>
+        <li><a href="#story"><span class="mk">02</span>Our story</a></li>
+        <li><a href="#logo"><span class="mk">03</span>Logo</a></li>
+        <li><a href="#colour"><span class="mk">04</span>Colour</a></li>
+        <li><a href="#type"><span class="mk">05</span>Typography</a></li>
+        <li><a href="#elements"><span class="mk">06</span>Graphic elements</a></li>
+        <li><a href="#imagery"><span class="mk">07</span>Photography</a></li>
+        <li><a href="#voice"><span class="mk">08</span>Voice &amp; tone</a></li>
+        <li><a href="#applications"><span class="mk">09</span>Applications</a></li>
+        <li><a href="#partners"><span class="mk">10</span>Partners &amp; linking</a></li>
+        <li><a href="#checklist"><span class="mk">11</span>Checklist</a></li>
+        <li><a href="#notes"><span class="mk">12</span>Notes &amp; open items</a></li>
+      </ol>
+      <p class="rail-meta">Corporate Identity Guidelines<br />Version 1.0 · October 2026</p>
+    </div>
+  </nav>
+
+  <main id="top">
+
+<!-- ================= COVER ================= -->
+<section class="cover" aria-label="Cover">
+  <img class="wm" src="assets/star/star-faint.png" alt="" aria-hidden="true" />
+  <div>
+    <img class="cover-logo logo-l" src="assets/logo/humanrise-logo-colour.png" alt="HumanRise" />
+    <img class="cover-logo logo-d" src="assets/logo/humanrise-logo-white.png" alt="HumanRise" />
+  </div>
+  <div class="ch-head">
+    <p class="eyebrow">Corporate Identity Guidelines</p>
+    <h1>Our story, our look,<br />our voice. <span class="hl">Overcoming Limits.</span></h1>
+    <p class="lead">How HumanRise looks, sounds and shows up, from a LinkedIn post to a training workbook to a partner’s website. Use it to make everything carrying our name feel like it comes from the same people.</p>
+  </div>
+  <dl class="cover-meta">
+    <div><dt>Brand</dt><dd>HumanRise ZA (Pty) Ltd</dd></div>
+    <div><dt>Version</dt><dd>1.0</dd></div>
+    <div><dt>Date</dt><dd>October 2026</dd></div>
+    <div><dt>Web</dt><dd>humanrise.co.za</dd></div>
+  </dl>
+</section>
+
+<!-- ================= CONTENTS ================= -->
+<section class="chapter" id="contents" aria-labelledby="contents-h">
+  <div class="ch-head">
+    <p class="eyebrow">Contents</p>
+    <h2 class="ch-title" id="contents-h">What’s inside</h2>
+  </div>
+  <ol class="contents">
+    <li><a href="#intro"><span class="n">01</span><span class="t">Introduction</span><span class="d">Who this guide is for and the brand at a glance</span></a></li>
+    <li><a href="#story"><span class="n">02</span><span class="t">Our story</span><span class="d">Purpose, the idea in the logo, values, AI stance, audiences</span></a></li>
+    <li><a href="#logo"><span class="n">03</span><span class="t">Logo</span><span class="d">Versions, clear space, sizes, backgrounds, misuse</span></a></li>
+    <li><a href="#colour"><span class="n">04</span><span class="t">Colour</span><span class="d">Core palette, ranges, proportions, accessibility</span></a></li>
+    <li><a href="#type"><span class="n">05</span><span class="t">Typography</span><span class="d">Roboto, type scale, setting rules, fallbacks</span></a></li>
+    <li><a href="#elements"><span class="n">06</span><span class="t">Graphic elements</span><span class="d">The star, the rising path, shapes, buttons, icons</span></a></li>
+    <li><a href="#imagery"><span class="n">07</span><span class="t">Photography</span><span class="d">Style, subjects, treatment, consent</span></a></li>
+    <li><a href="#voice"><span class="n">08</span><span class="t">Voice &amp; tone</span><span class="d">How we write, words we use, boilerplate</span></a></li>
+    <li><a href="#applications"><span class="n">09</span><span class="t">Applications</span><span class="d">Web, social, job ads, email, print, presentations</span></a></li>
+    <li><a href="#partners"><span class="n">10</span><span class="t">Partners &amp; linking</span><span class="d">Co-branding, links, approvals, compliance lines</span></a></li>
+    <li><a href="#checklist"><span class="n">11</span><span class="t">Checklist</span><span class="d">Run through this before anything goes out</span></a></li>
+    <li><a href="#notes"><span class="n">12</span><span class="t">Notes &amp; open items</span><span class="d">Version history and what still needs doing</span></a></li>
+  </ol>
+</section>
+
+<!-- ================= 01 INTRO ================= -->
+<section class="chapter" id="intro" aria-labelledby="intro-h">
+  <div class="ch-head">
+    <div class="ch-num"><span class="mk">01</span><span class="eyebrow">Introduction</span></div>
+    <h2 class="ch-title" id="intro-h">One brand, told the same way everywhere.</h2>
+    <p class="lead">People meet HumanRise in many places: a vacancy on LinkedIn, a phone call about a disciplinary hearing, a workshop, a partner’s website. Each of those moments should feel like the same warm, capable team. This guide shows how.</p>
+  </div>
+
+  <div class="block">
+    <h3>Who this guide is for</h3>
+    <div class="g3">
+      <div class="card"><span class="tag">Our team</span><h4>Consultants, recruiters, trainers and admin</h4><p>Writing job ads, emails, proposals, social posts and course material.</p></div>
+      <div class="card"><span class="tag">Makers</span><h4>Designers, developers, printers and agencies</h4><p>Building the website, artwork, signage, merchandise and templates.</p></div>
+      <div class="card"><span class="tag">Partners</span><h4>Partners, clients, venues and media</h4><p>Mentioning, linking to or co-branding with HumanRise. Chapter 10 is written for you.</p></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>How to use it</h3>
+    <div class="prose">
+      <p>Start with <a href="#story">Our story</a>. It explains why the brand looks and sounds the way it does, and every rule after it follows from that. Chapters 03 to 08 are the building blocks. Chapter 09 shows them put together on real items, and chapter 11 is a checklist to run before anything goes out.</p>
+      <p>If something isn’t covered, choose the option that feels most human, most clear and most honest. Then ask us at <b>info@humanrise.co.za</b> so we can add it to the next version.</p>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>The brand at a glance</h3>
+    <div class="tbl-wrap">
+      <table class="glance">
+        <tbody>
+          <tr><th scope="row">Brand name</th><td><b>HumanRise</b>, one word with a capital H and R</td></tr>
+          <tr><th scope="row">Registered name</th><td>HumanRise ZA (Pty) Ltd</td></tr>
+          <tr><th scope="row">Tagline</th><td><b>Overcoming Limits</b></td></tr>
+          <tr><th scope="row">Headline line</th><td>Raising People. Raising Potential.</td></tr>
+          <tr><th scope="row">What we do</th><td>Recruitment · HR &amp; Compliance · Training &amp; Development</td></tr>
+          <tr><th scope="row">Where</th><td>Office in Cape Town, South Africa, serving clients nationally</td></tr>
+          <tr><th scope="row">Primary colour</th><td><span class="chip" style="background:#7869BC"></span>Star Purple <span class="mono">#7869BC</span></td></tr>
+          <tr><th scope="row">Typeface</th><td>Roboto (fallback: Arial)</td></tr>
+          <tr><th scope="row">Website</th><td>humanrise.co.za · live jobs at jobs.humanrise.co.za</td></tr>
+          <tr><th scope="row">Social</th><td>linkedin.com/company/humanriseza</td></tr>
+          <tr><th scope="row">Contact</th><td>info@humanrise.co.za · 021 001 8094</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 STORY ================= -->
+<section class="chapter" id="story" aria-labelledby="story-h">
+  <div class="ch-head">
+    <div class="ch-num"><span class="mk">02</span><span class="eyebrow">Our story</span></div>
+    <h2 class="ch-title" id="story-h">Hiring is about people, not paperwork.</h2>
+  </div>
+
+  <div class="block">
+    <div class="prose">
+      <p>HumanRise started with a simple belief: hiring is about people, not paperwork.</p>
+      <p>Behind every CV is a person with ambitions. Behind every vacancy is a team trying to grow. Too often the process between them is rushed and impersonal. Good people are filtered out before anyone has spoken to them, and businesses pay for it with hires that don’t last.</p>
+      <p>We do it differently. We listen first. We match on skills and on fit. We take care of the HR and compliance detail so owners and managers can get back to running their business. We use modern tools, AI included, to work faster and more carefully, and a person always makes the call.</p>
+      <p>Our name says what we do. <b>Human</b>, because people come first. <b>Rise</b>, because our work is about helping people and teams go further than they thought they could. Our promise sits underneath it: <b class="hl">Overcoming Limits.</b></p>
+    </div>
+  </div>
+
+  <div class="g3">
+    <div class="card"><span class="tag">Purpose · why we exist</span><h4>To help people and teams overcome their limits.</h4></div>
+    <div class="card"><span class="tag">Mission · what we do</span><h4>We connect great businesses with great people, and give both the HR support, training and guidance they need to grow.</h4></div>
+    <div class="card"><span class="tag">Promise · our tagline</span><h4>Overcoming Limits.</h4></div>
+  </div>
+
+  <div class="block">
+    <h3>The idea in the logo</h3>
+    <p class="prose">Read our logo slowly and it tells the whole story. Every detail was drawn on purpose.</p>
+    <figure class="spec">
+      <div class="spec-art">
+        <div class="anat">
+          <img src="assets/logo/humanrise-logo-colour.png" alt="The HumanRise logo with numbered callouts and dashed guide lines showing the raised n and the rising I" />
+          <svg viewBox="0 0 1731 1099" preserveAspectRatio="none" aria-hidden="true">
+            <line class="g" x1="20" x2="1712" y1="503" y2="503" />
+            <line class="g" x1="330" x2="1420" y1="673" y2="673" />
+            <line class="g" x1="330" x2="1420" y1="1070" y2="1070" />
+          </svg>
+          <span class="pin" style="left:29%;top:12%">1</span>
+          <span class="pin" style="left:65%;top:8%">2</span>
+          <span class="pin" style="left:93%;top:7%">3</span>
+          <span class="pin" style="left:85%;top:79%">4</span>
+          <span class="pin" style="left:42.2%;top:49.5%">5</span>
+        </div>
+      </div>
+    </figure>
+    <ol class="read">
+      <li><span class="pn">1</span><h4>“Hum” starts soft</h4><p>Lowercase, approachable, in Human Lavender. This is the person as they are today, standing on the line.</p></li>
+      <li><span class="pn">2</span><h4>The star takes the place of the “a”</h4><p>Hand-drawn, because we are people: imperfect, and we fit in. A star, because everyone has the potential to be among the greatest. Your potential is full and great.</p></li>
+      <li><span class="pn">3</span><h4>After the star, the “n” rises</h4><p>It lifts off the baseline (dashed line) and turns vivid purple. Meet your potential and you rise. It also echoes the rising I below.</p></li>
+      <li><span class="pn">4</span><h4>RISE in capitals</h4><p>Larger and stronger than “Human”. RISE is the outcome we reach together, and a call to act: rise up.</p></li>
+      <li><span class="pn">5</span><h4>The I breaks through</h4><p>The darkest letter lifts off the baseline and breaks through the top line of the word. It is the individual rising and a ceiling broken. It is <b>Overcoming Limits</b>, drawn.</p></li>
+      <li><span class="pn ai">A+I</span><h4>Two changed letters spell AI</h4><p>The only letters we redrew are the <b>A</b> (the star) and the <b>I</b>. Together they say we are forward-thinking and use AI usefully and safely, in our own way. The human star comes first.</p></li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <h3>The colour flows like a career</h3>
+    <p class="prose">Purple is new, fun and creative. Blue is trust, experience and stability. Read the logo top to bottom and the colour moves from soft lavender, to vivid purple, into blue and finally the deepest blue of the rising I. It grows and flows the way a career does.</p>
+    <figure class="flow">
+      <div class="flow-bar" role="img" aria-label="Colour flow from Human Lavender through Star Purple and Rise Blue to Deep Rise"></div>
+      <div class="flow-labels">
+        <div><b>Human Lavender</b><span>Starting out</span></div>
+        <div><b>Star Purple</b><span>Potential, energy</span></div>
+        <div><b>Rise Blue</b><span>Growing in trust</span></div>
+        <div><b>Deep Rise</b><span>Experience, stability</span></div>
+      </div>
+      <div class="flow-ends"><span>New · fun · creative</span><span>Trust · experience · stability</span></div>
+    </figure>
+  </div>
+
+  <div class="block">
+    <h3>Human-led. AI-assisted.</h3>
+    <div class="prose">
+      <p>The A and the I in our logo are a promise about technology. We use AI where it makes us faster, fairer and more careful: sorting applications, drafting documents, scheduling, spotting patterns. People make the decisions that affect people. This is how we keep our website promise that “a real consultant, not a bot” reviews every CV.</p>
+    </div>
+    <div class="g3">
+      <div class="card"><img class="star" src="assets/star/star-purple.png" alt="" /><h4>A person makes the call</h4><p>A HumanRise consultant reviews every CV, shortlist and HR recommendation. AI supports that work and never replaces it.</p></div>
+      <div class="card"><img class="star" src="assets/star/star-slate.png" alt="" /><h4>We’re open about it</h4><p>When AI plays a part in a process that affects someone, we say so in plain language.</p></div>
+      <div class="card"><img class="star" src="assets/star/star-deep.png" alt="" /><h4>Data stays protected</h4><p>We only use tools that meet our POPIA obligations, and we keep personal information out of tools that don’t.</p></div>
+    </div>
+    <div class="note"><span class="ms" aria-hidden="true">gavel</span><p>This also keeps us in line with section 71 of POPIA, which limits decisions about a person that are based solely on automated processing.</p></div>
+  </div>
+
+  <div class="block">
+    <h3>What we stand for</h3>
+    <div class="g2">
+      <div class="card"><img class="star" src="assets/star/star-purple.png" alt="" /><h4>People first</h4><p>We treat candidates and clients as people, not transactions, with honesty at every step.</p><p class="small"><b>Shows up as:</b> real conversations before shortlists, plain-language updates and a consultant on every CV.</p></div>
+      <div class="card"><img class="star" src="assets/star/star-slate.png" alt="" /><h4>Fit over filling</h4><p>The right match beats a fast one. We aim for retention, not just placement count.</p><p class="small"><b>Shows up as:</b> skills and culture-fit matching, psychometric testing, and checking in well beyond day one.</p></div>
+      <div class="card"><img class="star" src="assets/star/star-deep.png" alt="" /><h4>Compliance built in</h4><p>POPIA-ready processes and ethical data handling are part of how we work from the start.</p><p class="small"><b>Shows up as:</b> consent on every form, lawful and fair disciplinary processes, and accredited training where it counts.</p></div>
+      <div class="card"><img class="star" src="assets/star/star-purple.png" alt="" /><h4>Practical &amp; affordable</h4><p>Advice that works in a real business, at a price a small team can manage.</p><p class="small"><b>Shows up as:</b> clear quotes, SMME-friendly options and no jargon.</p></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>Our personality</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>We are</th><th>We are not</th><th>In practice</th></tr></thead>
+        <tbody>
+          <tr><td><b>Warm</b></td><td>Over-familiar</td><td>Friendly and kind, without slang or forced jokes.</td></tr>
+          <tr><td><b>Professional</b></td><td>Corporate or cold</td><td>Expert and precise, in plain words.</td></tr>
+          <tr><td><b>Confident</b></td><td>Pushy</td><td>We give a clear recommendation and respect the decision.</td></tr>
+          <tr><td><b>Clear</b></td><td>Simplistic</td><td>Short sentences that still carry the detail people need.</td></tr>
+          <tr><td><b>Modern</b></td><td>Trend-chasing</td><td>Clean, current design and tools, AI included, used with care.</td></tr>
+          <tr><td><b>Supportive</b></td><td>Patronising</td><td>We guide and encourage, and we treat people as capable adults.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>Who we talk to</h3>
+    <div class="g3">
+      <div class="card"><span class="tag">Businesses</span><h4>Owners, directors, managers and HR</h4><p>SMMEs, startups, corporates, retailers, manufacturers and professional services. They want to save time and money, improve efficiency and hire people who stay, while staying compliant.</p><p class="small"><b>Tell them:</b> “We find people who raise the room, and we handle the HR detail.”</p></div>
+      <div class="card"><span class="tag">Individuals</span><h4>Job seekers and working professionals</h4><p>All ages and career stages. They value quality, speed, trust and a personal connection, and often need guidance, mentoring or coaching.</p><p class="small"><b>Tell them:</b> “A real consultant reads your CV and matches you to roles that fit.”</p></div>
+      <div class="card"><span class="tag">Learners</span><h4>Teams, managers and first-time job seekers</h4><p>HR practitioners, supervisors, recruiters, entry-level employees and unemployed youth who want practical, recognised skills.</p><p class="small"><b>Tell them:</b> “Practical training, accredited where it counts.”</p></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>Positioning</h3>
+    <div class="note"><span class="ms" aria-hidden="true">flag</span><p><strong>For South African businesses and job seekers who want more than a CV shuffle, HumanRise is the people-first HR and recruitment partner that matches on fit, builds compliance in and stays involved long after the placement.</strong></p></div>
+  </div>
+
+  <div class="block">
+    <h3>Brand architecture</h3>
+    <p class="prose">HumanRise is one master brand. Our services are described in words, not given their own logos. The Career Cat is an independent partner brand that we endorse for career enhancement.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Level</th><th>Name</th><th>How it appears</th></tr></thead>
+        <tbody>
+          <tr><td>Master brand</td><td><b>HumanRise</b></td><td>The logo. Always present.</td></tr>
+          <tr><td>Service lines</td><td>Recruitment · HR &amp; Compliance · Training &amp; Development</td><td>Roboto text next to or below the logo. Never as separate logos.</td></tr>
+          <tr><td>Courses</td><td>Managing Workplace Discipline · Recruitment Made Easy · My Team Motivator · Workplace Essentials (WES) · Workplace Preparation</td><td>Course titles in text, written exactly as listed.</td></tr>
+          <tr><td>Channels</td><td>humanrise.co.za · jobs.humanrise.co.za</td><td>Our website, and our live vacancies and applications.</td></tr>
+          <tr><td>Partner</td><td>the Career Cat (careercat.co.za)</td><td>Its own logo in a partnership lock-up. See chapter 10.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 LOGO ================= -->
+<section class="chapter" id="logo" aria-labelledby="logo-h">
+  <div class="ch-head">
+    <div class="ch-num"><span class="mk">03</span><span class="eyebrow">Logo</span></div>
+    <h2 class="ch-title" id="logo-h">One mark, used with care.</h2>
+    <p class="lead">Our logo is a stacked wordmark: “Hum★n” above “RISE”. It is one piece of artwork. Always use the master files and never rebuild, retype or rearrange it.</p>
+  </div>
+
+  <figure class="spec">
+    <div class="spec-art" style="padding-block:clamp(36px,8vw,72px)"><img src="assets/logo/humanrise-logo-colour.png" alt="HumanRise primary logo in full colour" style="width:min(100%,460px)" /></div>
+  </figure>
+
+  <div class="block">
+    <h3>Logo versions</h3>
+    <div class="versions">
+      <div class="ver"><div class="ver-art" style="background:#FFFFFF"><img src="assets/logo/humanrise-logo-colour.png" alt="Full-colour logo" /></div><h4>Full colour (primary)</h4><p>The default. Use it on white and on the lightest tints (Mist, Sky, Lavender 100).</p></div>
+      <div class="ver"><div class="ver-art" style="background:#456285"><img src="assets/logo/humanrise-logo-white.png" alt="White logo on Deep Rise" /></div><h4>White (reversed)</h4><p>On Deep Rise, Star Purple, Purple 600–700 and dark, calm areas of photos.</p></div>
+      <div class="ver"><div class="ver-art" style="background:#FFFFFF"><img src="assets/logo/humanrise-logo-deep.png" alt="Single-colour Deep Rise logo" /></div><h4>Single colour, Deep Rise</h4><p>One-colour print, embroidery, engraving, stamps and branded pens.</p></div>
+      <div class="ver"><div class="ver-art" style="background:#FFFFFF"><img src="assets/logo/humanrise-logo-black.png" alt="Single-colour black logo" /></div><h4>Black</h4><p>Only when print is limited to black: newspapers, faxed or photocopied forms.</p></div>
+      <div class="ver"><div class="ver-art" style="background:#F7F6FB"><img class="st" src="assets/star/star-purple.png" alt="The star mark" /></div><h4>Star mark</h4><p>The star on its own, for favicons, avatars, watermarks and small spaces. It never replaces the logo on a first introduction.</p></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>Clear space</h3>
+    <div class="g2" style="align-items:center">
+      <figure>
+        <div class="clear-wrap"><div class="clear">
+          <img src="assets/logo/humanrise-logo-colour.png" alt="Logo inside a dashed boundary that marks its clear space" />
+          <span class="xu" style="left:0;top:8.75cqi">X</span><span class="xu" style="left:4.38cqi;top:8.75cqi">X</span>
+          <span class="xu" style="left:8.75cqi;top:0">X</span><span class="xu" style="left:8.75cqi;top:4.38cqi">X</span>
+        </div></div>
+      </figure>
+      <div class="prose">
+        <p><b>X</b> is the width of the rising I in RISE. Keep a clear space of at least <b>2X</b> on every side of the logo, which is about 10% of the logo’s width. Nothing enters that space: no text, edges, folds or other logos.</p>
+        <p>On screens, never use less than <b>24px</b>, whatever the logo size. In print, never less than <b>6mm</b>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>Minimum size and placement</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Item</th><th>Screen</th><th>Print</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>Full logo</td><td class="num">120px wide</td><td class="num">30mm wide</td><td>The star’s hand-drawn line needs room to read.</td></tr>
+          <tr><td>Full logo, website header</td><td class="num">72px wide</td><td class="num">–</td><td>Allowed in headers on high-resolution screens only.</td></tr>
+          <tr><td>Star mark</td><td class="num">24px</td><td class="num">8mm</td><td>Use the avatar version (chapter 09) below 48px.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="prose">
+      <li><b>Top left</b> is the default position on documents, web pages and slides.</li>
+      <li><b>Centred</b> on covers, business card fronts, pull-up banners and the avatar.</li>
+      <li><b>Bottom right</b> as a sign-off on adverts and social posts, with the tagline where it fits.</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3>Backgrounds</h3>
+    <p class="prose">White is our base. Place the full-colour logo on white or our lightest tints, and the white logo on our deep colours. If you have to think about whether it’s readable, it isn’t.</p>
+    <div class="dd-grid">
+      <figure class="dd ok"><div class="dd-art" style="background:#FFFFFF"><img src="assets/logo/humanrise-logo-colour.png" alt="" /></div><figcaption><svg aria-hidden="true"><use href="#i-ok"/></svg><span><b>White</b>, the default</span></figcaption></figure>
+      <figure class="dd ok"><div class="dd-art" style="background:#F7F6FB"><img src="assets/logo/humanrise-logo-colour.png" alt="" /></div><figcaption><svg aria-hidden="true"><use href="#i-ok"/></svg><span><b>Mist</b> #F7F6FB</span></figcaption></figure>
+      <figure class="dd ok"><div class="dd-art" style="background:#456285"><img src="assets/logo/humanrise-logo-white.png" alt="" /></div><figcaption><svg aria-hidden="true"><use href="#i-ok"/></svg><span><b>Deep Rise</b> with the white logo</span></figcaption></figure>
+      <figure class="dd ok"><div class="dd-art" style="background:#7869BC"><img src="assets/logo/humanrise-logo-white.png" alt="" /></div><figcaption><svg aria-hidden="true"><use href="#i-ok"/></svg><span><b>Star Purple</b> with the white logo</span></figcaption></figure>
+      <figure class="dd ok"><div class="dd-art" style="background:#1E1A2F"><img src="assets/logo/humanrise-logo-white.png" alt="" /></div><figcaption><svg aria-hidden="true"><use href="#i-ok"/></svg><span><b>Purple 700</b> with the white logo</span></figcaption></figure>
+      <figure class="dd no"><div class="dd-art" style="background:#6E86AE"><img src="assets/logo/humanrise-logo-colour.png" alt="" /></div><figcaption><svg aria-hidden="true"><use href="#i-no"/></svg><span>No full-colour logo on <b>mid-tones</b>: RISE disappears</span></figcaption></figure>
+      <figure class="dd no"><div class="dd-art" style="background:#1E1A2F"><img src="assets/logo/humanrise-logo-colour.png" alt="" /></div><figcaption><svg aria-hidden="true"><use href="#i-no"/></svg><span>No full-colour logo on <b>dark</b> colours: the I vanishes</span></figcaption></figure>
+      <figure class="dd no"><div class="dd-art" style="background:#FEFEF6"><img src="assets/logo/humanrise-logo-colour.png" alt="" /></div><figcaption><svg aria-hidden="true"><use href="#i-no"/></svg><span>No <b>cream</b> or off-white grounds: white is our base</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>Please don’t</h3>
+    <div class="dd-grid">
+      <figure class="dd no"><div class="dd-art m-stretch"><img src="assets/logo/humanrise-logo-colour.png" alt="" /></div><figcaption><svg aria-hidden="true"><use href="#i-no"/></svg><span><b>Stretch or squash</b> the logo. Always scale it proportionally.</span></figcaption></figure>
+      <figure class="dd no"><div class="dd-art m-recolour"><img src="assets/logo/humanrise-logo-colour.png" alt="" /></div><figcaption><svg aria-hidden="true"><use href="#i-no"/></svg><span><b>Recolour</b> it, even with other brand colours. Use the versions above.</span></figcaption></figure>
+      <figure class="dd no"><div class="dd-art m-rotate"><img src="assets/logo/humanrise-logo-colour.png" alt="" /></div><figcaption><svg aria-hidden="true"><use href="#i-no"/></svg><span><b>Rotate or tilt</b> it. The I rises vertically, so the logo stays upright.</span></figcaption></figure>
+      <figure class="dd no"><div class="dd-art m-fx"><img src="assets/logo/humanrise-logo-colour.png" alt="" /></div><figcaption><svg aria-hidden="true"><use href="#i-no"/></svg><span><b>Add effects</b>: shadows, glows, bevels or gradients.</span></figcaption></figure>
+      <figure class="dd no"><div class="dd-art m-busy"><img src="assets/logo/humanrise-logo-colour.png" alt="" /></div><figcaption><svg aria-hidden="true"><use href="#i-no"/></svg><span>Place it on a <b>busy photo</b>. Find a calm area or add an overlay.</span></figcaption></figure>
+      <figure class="dd no"><div class="dd-art m-split"><span class="hu"></span><span class="ri"></span></div><figcaption><svg aria-hidden="true"><use href="#i-no"/></svg><span><b>Rearrange</b> the parts, for example Human and RISE side by side.</span></figcaption></figure>
+      <figure class="dd no"><div class="dd-art m-retype"><div>Hum★n<small>RISE</small></div></div><figcaption><svg aria-hidden="true"><use href="#i-no"/></svg><span><b>Retype</b> the name in a font, or swap the star for a standard star or emoji.</span></figcaption></figure>
+      <figure class="dd no"><div class="dd-art m-outline"><img src="assets/logo/humanrise-logo-colour.png" alt="" /></div><figcaption><svg aria-hidden="true"><use href="#i-no"/></svg><span><b>Outline</b> the letters or add keylines and boxes around it.</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>Logo files</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>File (in <span class="mono">brand/assets/</span>)</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">logo/humanrise-logo-colour.png</td><td>Primary logo, transparent background, 1731 × 1099px</td></tr>
+          <tr><td class="mono">logo/humanrise-logo-white.png</td><td>Reversed logo for dark backgrounds</td></tr>
+          <tr><td class="mono">logo/humanrise-logo-deep.png</td><td>Single colour, Deep Rise</td></tr>
+          <tr><td class="mono">logo/humanrise-logo-black.png</td><td>Single colour, black</td></tr>
+          <tr><td class="mono">logo/humanrise-logo-email.png</td><td>Small file (360px wide) for email signatures</td></tr>
+          <tr><td class="mono">star/star-*.png</td><td>The star in five colourways (chapter 06)</td></tr>
+          <tr><td class="mono">star/humanrise-avatar.png</td><td>Profile image: white star on Star Purple, 800 × 800px</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note"><span class="ms" aria-hidden="true">info</span><p><strong>Cleaned artwork.</strong> These files remove a thin light-blue strip that showed under the rising I in the original export. The cream-background exports also carried a white block below the I, and they are retired. The PNGs are for screens and office documents. For professional print, signage or embroidery, use a vector master (SVG or PDF) exported from the original design file (see chapter 12).</p></div>
+  </div>
+</section>
+
+<!-- ================= 04 COLOUR ================= -->
+<section class="chapter" id="colour" aria-labelledby="colour-h">
+  <div class="ch-head">
+    <div class="ch-num"><span class="mk">04</span><span class="eyebrow">Colour</span></div>
+    <h2 class="ch-title" id="colour-h">Purple for the person. Blue for the rise.</h2>
+    <p class="lead">Every brand colour comes straight from the logo. Purple carries what is new, fun and creative. Blue carries trust, experience and stability. Together they flow the way a career grows.</p>
+  </div>
+
+  <div class="block">
+    <h3>Core palette</h3>
+    <div class="swatches">
+      <div class="sw">
+        <div class="sw-chip t-l" style="background:#7869BC"><span>Primary</span><b>Star Purple</b></div>
+        <div class="sw-body"><p>The star and the “n”. Buttons, links, highlights, icons and key words.</p>
+          <dl><dt>HEX</dt><dd>#7869BC</dd><dt>RGB</dt><dd>120 105 188</dd><dt>CMYK</dt><dd>36 44 0 26</dd></dl></div>
+      </div>
+      <div class="sw">
+        <div class="sw-chip t-l" style="background:#456285"><span>Primary dark</span><b>Deep Rise</b></div>
+        <div class="sw-body"><p>The rising I. Headings, dark panels, footers and the white logo’s background.</p>
+          <dl><dt>HEX</dt><dd>#456285</dd><dt>RGB</dt><dd>69 98 133</dd><dt>CMYK</dt><dd>48 26 0 48</dd></dl></div>
+      </div>
+      <div class="sw">
+        <div class="sw-chip t-l" style="background:#6E86AE"><span>Secondary</span><b>Rise Blue</b></div>
+        <div class="sw-body"><p>“RISE”. Outlines, graphics, charts and large text only.</p>
+          <dl><dt>HEX</dt><dd>#6E86AE</dd><dt>RGB</dt><dd>110 134 174</dd><dt>CMYK</dt><dd>37 23 0 32</dd></dl></div>
+      </div>
+      <div class="sw">
+        <div class="sw-chip t-l" style="background:#8E8AAE"><span>Secondary</span><b>Human Lavender</b></div>
+        <div class="sw-body"><p>“Hum”. Soft tints, dividers and decorative details.</p>
+          <dl><dt>HEX</dt><dd>#8E8AAE</dd><dt>RGB</dt><dd>142 138 174</dd><dt>CMYK</dt><dd>18 21 0 32</dd></dl></div>
+      </div>
+    </div>
+    <div class="minis">
+      <div class="mini"><i style="background:#FFFFFF"></i><div><b>White</b><span>#FFFFFF</span><p>Our base background</p></div></div>
+      <div class="mini"><i style="background:#000000"></i><div><b>Black</b><span>#000000</span><p>One-colour print only</p></div></div>
+    </div>
+    <p class="small">CMYK values are converted from the screen colours and are a starting point. Always approve a printed proof, and ask your printer to match on press.</p>
+  </div>
+
+  <div class="block">
+    <h3>Supporting neutrals</h3>
+    <div class="minis">
+      <div class="mini"><i style="background:#23222B"></i><div><b>Ink</b><span>#23222B</span><p>Body text. Softer than black.</p></div></div>
+      <div class="mini"><i style="background:#F7F6FB"></i><div><b>Mist</b><span>#F7F6FB</span><p>Section backgrounds and cards</p></div></div>
+      <div class="mini"><i style="background:#F4F7FA"></i><div><b>Sky</b><span>#F4F7FA</span><p>Alternate sections</p></div></div>
+      <div class="mini"><i style="background:#E2E1EA"></i><div><b>Line</b><span>#E2E1EA</span><p>Borders, dividers, faint star</p></div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>How much of each</h3>
+    <div class="ratio" role="img" aria-label="Colour proportions: white and neutrals 60%, Deep Rise and Ink 20%, Star Purple 12%, Rise Blue 5%, Human Lavender 3%">
+      <div style="flex:60;background:#FFFFFF;color:#23222B;border-right:1px solid #E2E1EA">White &amp; neutrals 60%</div>
+      <div style="flex:20;background:#456285;color:#FFFFFF">Deep / Ink 20%</div>
+      <div style="flex:12;background:#7869BC;color:#FFFFFF">12%</div>
+      <div style="flex:5;background:#6E86AE;color:#FFFFFF"></div>
+      <div style="flex:3;background:#8E8AAE"></div>
+    </div>
+    <p class="prose">Keep layouts light and open. Deep Rise and Ink carry the text, Star Purple is the spark (use it for what you want people to notice or press), and Rise Blue and Human Lavender add depth in small amounts.</p>
+  </div>
+
+  <div class="block">
+    <h3>Tint and shade ranges</h3>
+    <p class="prose">Each core colour runs from white to black in nine steps. The outlined swatch is the core colour. Use tints for backgrounds and shades for text or depth.</p>
+    <div class="ramp-wrap">
+      <div class="ramps">
+        <div class="ramp-row"><b>Lavender</b>
+          <div style="background:#FFFFFF;color:#23222B"><em>0</em>#FFFFFF</div><div style="background:#E2E1EA;color:#23222B"><em>100</em>#E2E1EA</div><div style="background:#C6C4D6;color:#23222B"><em>200</em>#C6C4D6</div><div style="background:#AAA7C2;color:#23222B"><em>300</em>#AAA7C2</div><div class="core" style="background:#8E8AAE;color:#FFFFFF"><em>400</em>#8E8AAE</div><div style="background:#6A6782;color:#FFFFFF"><em>500</em>#6A6782</div><div style="background:#474557;color:#FFFFFF"><em>600</em>#474557</div><div style="background:#23222B;color:#FFFFFF"><em>700</em>#23222B</div><div style="background:#000000;color:#FFFFFF"><em>1000</em>#000000</div>
+        </div>
+        <div class="ramp-row"><b>Purple</b>
+          <div style="background:#FFFFFF;color:#23222B"><em>0</em>#FFFFFF</div><div style="background:#DDD9EE;color:#23222B"><em>100</em>#DDD9EE</div><div style="background:#BBB4DD;color:#23222B"><em>200</em>#BBB4DD</div><div style="background:#998ECC;color:#23222B"><em>300</em>#998ECC</div><div class="core" style="background:#7869BC;color:#FFFFFF"><em>400</em>#7869BC</div><div style="background:#5A4E8D;color:#FFFFFF"><em>500</em>#5A4E8D</div><div style="background:#3C345E;color:#FFFFFF"><em>600</em>#3C345E</div><div style="background:#1E1A2F;color:#FFFFFF"><em>700</em>#1E1A2F</div><div style="background:#000000;color:#FFFFFF"><em>1000</em>#000000</div>
+        </div>
+        <div class="ramp-row"><b>Blue</b>
+          <div style="background:#FFFFFF;color:#23222B"><em>0</em>#FFFFFF</div><div style="background:#DAE0EA;color:#23222B"><em>100</em>#DAE0EA</div><div style="background:#B6C2D6;color:#23222B"><em>200</em>#B6C2D6</div><div style="background:#92A4C2;color:#23222B"><em>300</em>#92A4C2</div><div class="core" style="background:#6E86AE;color:#FFFFFF"><em>400</em>#6E86AE</div><div style="background:#526482;color:#FFFFFF"><em>500</em>#526482</div><div style="background:#374357;color:#FFFFFF"><em>600</em>#374357</div><div style="background:#1B212B;color:#FFFFFF"><em>700</em>#1B212B</div><div style="background:#000000;color:#FFFFFF"><em>1000</em>#000000</div>
+        </div>
+        <div class="ramp-row"><b>Deep</b>
+          <div style="background:#FFFFFF;color:#23222B"><em>0</em>#FFFFFF</div><div style="background:#D0D7E0;color:#23222B"><em>100</em>#D0D7E0</div><div style="background:#A2B0C2;color:#23222B"><em>200</em>#A2B0C2</div><div style="background:#7389A3;color:#FFFFFF"><em>300</em>#7389A3</div><div class="core" style="background:#456285;color:#FFFFFF"><em>400</em>#456285</div><div style="background:#334963;color:#FFFFFF"><em>500</em>#334963</div><div style="background:#223142;color:#FFFFFF"><em>600</em>#223142</div><div style="background:#111821;color:#FFFFFF"><em>700</em>#111821</div><div style="background:#000000;color:#FFFFFF"><em>1000</em>#000000</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>Accessible pairings</h3>
+    <p class="prose">Our website commits to WCAG 2.1 AA. Body text needs a contrast ratio of at least 4.5:1. Large text (24px and up, or 19px bold) and graphics need 3:1.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Text / foreground</th><th>Background</th><th class="num">Ratio</th><th>Body text</th><th>Large text &amp; icons</th></tr></thead>
+        <tbody>
+          <tr><td><span class="chip" style="background:#23222B"></span>Ink</td><td>White</td><td class="num">15.7:1</td><td><span class="pill ok">Yes</span></td><td><span class="pill ok">Yes</span></td></tr>
+          <tr><td><span class="chip" style="background:#456285"></span>Deep Rise</td><td>White</td><td class="num">6.3:1</td><td><span class="pill ok">Yes</span></td><td><span class="pill ok">Yes</span></td></tr>
+          <tr><td><span class="chip" style="background:#7869BC"></span>Star Purple</td><td>White</td><td class="num">4.6:1</td><td><span class="pill ok">Yes</span></td><td><span class="pill ok">Yes</span></td></tr>
+          <tr><td><span class="chip" style="background:#FFFFFF"></span>White</td><td>Star Purple (buttons)</td><td class="num">4.6:1</td><td><span class="pill ok">Yes</span></td><td><span class="pill ok">Yes</span></td></tr>
+          <tr><td><span class="chip" style="background:#FFFFFF"></span>White</td><td>Deep Rise</td><td class="num">6.3:1</td><td><span class="pill ok">Yes</span></td><td><span class="pill ok">Yes</span></td></tr>
+          <tr><td><span class="chip" style="background:#5A4E8D"></span>Purple 500</td><td>Mist</td><td class="num">6.7:1</td><td><span class="pill ok">Yes</span></td><td><span class="pill ok">Yes</span></td></tr>
+          <tr><td><span class="chip" style="background:#7869BC"></span>Star Purple</td><td>Mist</td><td class="num">4.3:1</td><td><span class="pill no">No</span></td><td><span class="pill ok">Yes</span></td></tr>
+          <tr><td><span class="chip" style="background:#6E86AE"></span>Rise Blue</td><td>White</td><td class="num">3.7:1</td><td><span class="pill no">No</span></td><td><span class="pill ok">Yes</span></td></tr>
+          <tr><td><span class="chip" style="background:#8E8AAE"></span>Human Lavender</td><td>White</td><td class="num">3.3:1</td><td><span class="pill no">No</span></td><td><span class="pill ok">Yes</span></td></tr>
+          <tr><td><span class="chip" style="background:#FFFFFF"></span>White</td><td>Rise Blue</td><td class="num">3.7:1</td><td><span class="pill no">No</span></td><td><span class="pill ok">Yes</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="prose">
+      <li>Small purple text on a tinted background (links, labels) uses <b>Purple 500 #5A4E8D</b>.</li>
+      <li>Small uppercase labels (“eyebrows”) use Star Purple or Deep Rise, never Rise Blue.</li>
+      <li>Never rely on colour alone to carry meaning. Pair it with a word or an icon.</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3>Colour in charts and data</h3>
+    <p class="prose">Use the colours in this order so charts look the same everywhere: <span class="chip" style="background:#7869BC"></span>Star Purple, <span class="chip" style="background:#456285"></span>Deep Rise, <span class="chip" style="background:#6E86AE"></span>Rise Blue, <span class="chip" style="background:#8E8AAE"></span>Human Lavender, then Purple 200 and Blue 200 for a fifth and sixth series. Highlight one series in Star Purple and grey the rest (Lavender 200) when the point is a single number.</p>
+  </div>
+</section>
+
+<!-- ================= 05 TYPE ================= -->
+<section class="chapter" id="type" aria-labelledby="type-h">
+  <div class="ch-head">
+    <div class="ch-num"><span class="mk">05</span><span class="eyebrow">Typography</span></div>
+    <h2 class="ch-title" id="type-h">Roboto, set clean and confident.</h2>
+    <p class="lead">One typeface family does everything. Roboto is clean, modern and easy to read at any size. It is free from Google Fonts, so our team, partners and printers can all use it.</p>
+  </div>
+
+  <div class="specimen">
+    <p class="eyebrow">Roboto Black · Display</p>
+    <p class="big">Overcoming <span class="hl">Limits.</span></p>
+    <p class="abc">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz<br />0123456789 R2 000 · 021 001 8094 · &amp; @ ? !</p>
+    <div class="weights">
+      <div><b style="font-weight:300">Aa</b><span>Light 300 · large intro text</span></div>
+      <div><b style="font-weight:400">Aa</b><span>Regular 400 · body text</span></div>
+      <div><b style="font-weight:500">Aa</b><span>Medium 500 · UI, emphasis</span></div>
+      <div><b style="font-weight:700">Aa</b><span>Bold 700 · subheads, buttons</span></div>
+      <div><b style="font-weight:900">Aa</b><span>Black 900 · headlines</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>Type scale</h3>
+    <div class="tbl-wrap">
+      <table class="scale">
+        <thead><tr><th>Style</th><th>Sample</th><th class="num">Screen</th><th class="num">Print</th><th>Settings</th></tr></thead>
+        <tbody>
+          <tr><td>Display</td><td><span class="s" style="font-size:30px;font-weight:900;letter-spacing:-.025em">Raise potential</span></td><td class="num">64–78px</td><td class="num">48pt</td><td>Black 900 · line height 1.0 · tracking −2.5% · home hero and covers only</td></tr>
+          <tr><td>H1</td><td><span class="s" style="font-size:26px;font-weight:900;letter-spacing:-.02em">Find your next role</span></td><td class="num">48–64px</td><td class="num">36pt</td><td>Black 900 · 1.05 · −2%</td></tr>
+          <tr><td>H2</td><td><span class="s" style="font-size:22px;font-weight:900;letter-spacing:-.02em">What we do</span></td><td class="num">32–40px</td><td class="num">24pt</td><td>Black 900 · 1.1 · −2%</td></tr>
+          <tr><td>H3</td><td><span class="s" style="font-size:19px;font-weight:700">Recruitment that fits</span></td><td class="num">24–28px</td><td class="num">16pt</td><td>Bold 700 · 1.25</td></tr>
+          <tr><td>Lead</td><td><span class="s" style="font-size:17px;font-weight:300">HR, handled with care.</span></td><td class="num">20px</td><td class="num">12pt</td><td>Light 300 or Regular 400 · 1.6</td></tr>
+          <tr><td>Body</td><td><span class="s" style="font-size:15px">We match on skills and fit.</span></td><td class="num">16–18px</td><td class="num">10–11pt</td><td>Regular 400 · 1.6 · 45–75 characters a line</td></tr>
+          <tr><td>Small</td><td><span class="s" style="font-size:13px">POPIA compliant</span></td><td class="num">14px</td><td class="num">8.5pt</td><td>Regular 400 · captions, legal lines</td></tr>
+          <tr><td>Eyebrow</td><td><span class="s" style="font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-text)">Our services</span></td><td class="num">13–14px</td><td class="num">8pt</td><td>Bold 700 · UPPERCASE · +18% tracking · Star Purple or Deep Rise</td></tr>
+          <tr><td>Button</td><td><span class="s" style="font-size:14px;font-weight:700;letter-spacing:.03em">Book a consultation</span></td><td class="num">15px</td><td class="num">–</td><td>Bold 700 · <b>sentence case</b> · +3% tracking</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="block">
+      <h3>Setting rules</h3>
+      <ul class="prose">
+        <li><b>Sentence case</b> for headings and buttons: “Book a consultation”, not “Book A Consultation” or “BOOK A CONSULTATION”.</li>
+        <li><b>Left-align</b> text. Centre only short headlines on covers, banners and social posts.</li>
+        <li><b>Highlight one idea</b> per headline in Star Purple, as in “Overcoming <span class="hl">Limits.</span>”</li>
+        <li><b>Emphasise</b> with Medium or Bold, not italics or underlines. Underline links only.</li>
+        <li>Keep lines between <b>45 and 75 characters</b>, and use tabular figures in tables.</li>
+        <li>Never stretch, outline or add shadows to type.</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h3>Fallbacks and everyday tools</h3>
+      <ul class="prose">
+        <li><b>Web:</b> load Roboto from Google Fonts. Stack: <span class="mono">'Roboto', Arial, Helvetica, sans-serif</span>.</li>
+        <li><b>Google Docs and Slides:</b> Roboto is built in.</li>
+        <li><b>Microsoft Word and PowerPoint:</b> install Roboto from fonts.google.com. Use Arial for files you send out for others to edit.</li>
+        <li><b>Email signatures and HTML emails:</b> Arial, because most inboxes don’t have Roboto.</li>
+        <li><b>Print:</b> send PDFs with fonts embedded.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 ELEMENTS ================= -->
+<section class="chapter" id="elements" aria-labelledby="elements-h">
+  <div class="ch-head">
+    <div class="ch-num"><span class="mk">06</span><span class="eyebrow">Graphic elements</span></div>
+    <h2 class="ch-title" id="elements-h">The star, the path and soft edges.</h2>
+    <p class="lead">A small kit of shapes that we can use anywhere and that still feels like us. The hand-drawn star is the hero of the kit.</p>
+  </div>
+
+  <div class="block">
+    <h3>The star</h3>
+    <p class="prose">The star from our logo works on its own as a brand device. It is drawn as one continuous line, with two small loops that keep it human and a little imperfect. It is always an outline, never filled. Every colourway is drawn at <b>82% opacity</b>, which gives the line its soft, pencil-like feel. Keep that opacity, and don’t make it solid.</p>
+    <div class="stars">
+      <div class="star-t"><div class="art" style="background:#FFFFFF"><img src="assets/star/star-purple.png" alt="Star Purple star" /></div><b>Star Purple</b><span>Icons, value cards, accents</span></div>
+      <div class="star-t"><div class="art" style="background:#FFFFFF"><img src="assets/star/star-deep.png" alt="Deep Rise star" /></div><b>Deep Rise</b><span>Formal documents, print</span></div>
+      <div class="star-t"><div class="art" style="background:#FFFFFF"><img src="assets/star/star-slate.png" alt="Rise Blue star" /></div><b>Rise Blue</b><span>Supporting accents</span></div>
+      <div class="star-t"><div class="art" style="background:#FFFFFF"><img src="assets/star/star-faint.png" alt="Faint lavender star" /></div><b>Faint</b><span>Large watermarks on white</span></div>
+      <div class="star-t"><div class="art" style="background:#7869BC"><img src="assets/star/star-white.png" alt="White star" /></div><b>White</b><span>Watermarks on purple and blue</span></div>
+    </div>
+    <div class="dolist">
+      <div class="yes"><h4><svg aria-hidden="true"><use href="#i-ok"/></svg>Use the star</h4>
+        <ul><li>as a large watermark, cropped by the edge of the page, post or card (one per layout)</li><li>as a small icon beside values and key points</li><li>as the avatar and favicon</li><li>as the “a” stand-in, but only inside the logo itself</li></ul></div>
+      <div class="nope"><h4><svg aria-hidden="true"><use href="#i-no"/></svg>Don’t</h4>
+        <ul><li>redraw, trace, smooth or “fix” the line</li><li>fill it in, add a shadow or put it in a solid shape</li><li>scatter lots of stars as a pattern or use it as a bullet in long lists</li><li>spin it, or use it to rate things (“5 stars”)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>The rising path</h3>
+    <p class="prose">A dotted trail joins numbered markers to show progress through steps. Use it only for real sequences: how a process works, a course outline, a timeline. The trail is 2.4px Lavender 200 dots, and markers are white circles with a Rise Blue ring and a Deep Rise number.</p>
+    <ol class="path-steps">
+      <li><span class="mk">1</span><h4>Tell us your need</h4><p>Share the role, the team and the must-haves. We listen first.</p></li>
+      <li><span class="mk">2</span><h4>We shortlist</h4><p>You get a curated shortlist of screened, fit-matched candidates.</p></li>
+      <li><span class="mk">3</span><h4>You hire &amp; grow</h4><p>We support onboarding and check in well beyond day one.</p></li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <h3>Shape, edges and depth</h3>
+    <p class="prose">Soft, rounded corners and gentle blue-tinted shadows. Nothing sharp, nothing heavy.</p>
+    <div class="shape-demo">
+      <div style="border-radius:12px"><b>Buttons</b><span>8–12px radius</span></div>
+      <div style="border-radius:10px"><b>Inputs</b><span>10px radius</span></div>
+      <div style="border-radius:18px;box-shadow:0 16px 36px rgba(69,98,133,.13)"><b>Cards &amp; images</b><span>18px radius · soft shadow on hover</span></div>
+      <div style="border-radius:26px"><b>Feature bands</b><span>26px radius</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>Buttons</h3>
+    <div class="btn-row">
+      <span class="b b-primary">Book a consultation</span>
+      <span class="b b-secondary">Browse jobs</span>
+    </div>
+    <div class="ondark"><span class="b b-light">Get in touch</span><span class="b" style="color:#FFFFFF;border:1.6px solid rgba(255,255,255,.55);padding:13.4px 26px">For businesses</span></div>
+    <ul class="prose">
+      <li><b>Primary:</b> Star Purple fill, white text, soft purple shadow. Hover: #6A5BB0. One primary button per view.</li>
+      <li><b>Secondary:</b> white with a 1.6px Rise Blue outline and Deep Rise text.</li>
+      <li><b>On dark:</b> white fill with Deep Rise text, or a translucent white outline.</li>
+      <li>Bold 15px, <b>sentence case</b>, starting with a verb: “Submit your CV”, “Request talent”, “Book a seat”.</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3>Icons</h3>
+    <p class="prose">We use <b>Google Material Symbols, Outlined</b> (weight 400, unfilled, 24px grid). Colour them Star Purple, Rise Blue or Deep Rise, and set them in a 50px white rounded square with a soft shadow. Use one icon style only, and no emoji.</p>
+    <div class="icons">
+      <div class="ic-t"><span class="ic-box"><span class="ms" style="color:#7869BC">groups</span></span><b>Recruitment</b><code>groups</code></div>
+      <div class="ic-t"><span class="ic-box"><span class="ms" style="color:#6E86AE">person_search</span></span><b>Talent sourcing</b><code>person_search</code></div>
+      <div class="ic-t"><span class="ic-box"><span class="ms" style="color:#456285">psychology</span></span><b>Psychometrics</b><code>psychology</code></div>
+      <div class="ic-t"><span class="ic-box"><span class="ms" style="color:#7869BC">gavel</span></span><b>HR &amp; compliance</b><code>gavel</code></div>
+      <div class="ic-t"><span class="ic-box"><span class="ms" style="color:#6E86AE">receipt_long</span></span><b>Payroll</b><code>receipt_long</code></div>
+      <div class="ic-t"><span class="ic-box"><span class="ms" style="color:#456285">school</span></span><b>Training</b><code>school</code></div>
+      <div class="ic-t"><span class="ic-box"><span class="ms" style="color:#7869BC">schedule</span></span><b>Temp &amp; contract</b><code>schedule</code></div>
+      <div class="ic-t"><span class="ic-box"><span class="ms" style="color:#6E86AE">work</span></span><b>Jobs</b><code>work</code></div>
+      <div class="ic-t"><span class="ic-box"><span class="ms" style="color:#456285">verified</span></span><b>Accredited</b><code>verified</code></div>
+      <div class="ic-t"><span class="ic-box"><span class="ms" style="color:#7869BC">handshake</span></span><b>Partners</b><code>handshake</code></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 07 PHOTOGRAPHY ================= -->
+<section class="chapter" id="imagery" aria-labelledby="imagery-h">
+  <div class="ch-head">
+    <div class="ch-num"><span class="mk">07</span><span class="eyebrow">Photography</span></div>
+    <h2 class="ch-title" id="imagery-h">Real people, real work, real light.</h2>
+    <p class="lead">Our photos show the moments we make possible: a good conversation, a team that clicks, someone stepping into a new role. They are bright, natural and warm, and they reflect the people of South Africa.</p>
+  </div>
+
+  <div class="photos">
+    <figure><img src="assets/photos/team-1.jpg" alt="A diverse team greeting a new colleague in a bright office" /><figcaption>Connection: genuine smiles and natural light</figcaption></figure>
+    <figure><img src="assets/photos/team-2.jpg" alt="Colleagues shaking hands and smiling" /><figcaption>Warmth: people meeting as equals</figcaption></figure>
+    <figure><img src="assets/photos/recruitment-1.jpg" alt="An interview in a calm, modern office" /><figcaption>Recruitment: calm, respectful conversations</figcaption></figure>
+    <figure><img src="assets/photos/compliance-3.jpg" alt="A professional reviewing and signing documents" /><figcaption>Compliance: detail handled carefully</figcaption></figure>
+  </div>
+
+  <div class="dolist">
+    <div class="yes"><h4><svg aria-hidden="true"><use href="#i-ok"/></svg>Look for</h4>
+      <ul>
+        <li>Diverse South African faces, ages, abilities and body types</li>
+        <li>Real workplaces across our sectors: offices, shop floors, factories, warehouses, training rooms</li>
+        <li>Natural light, light backgrounds and soft, true colour</li>
+        <li>Candid moments of listening, learning and working together</li>
+        <li>Calm space in the frame for a headline or logo</li>
+      </ul></div>
+    <div class="nope"><h4><svg aria-hidden="true"><use href="#i-no"/></svg>Avoid</h4>
+      <ul>
+        <li>Staged stock clichés: thumbs-up, pointing at screens, jigsaw pieces</li>
+        <li>Cold corporate scenes: empty glass towers, suits only</li>
+        <li>Heavy filters, dark moody grading or strong colour casts</li>
+        <li>Too many handshakes. One per page at most.</li>
+        <li>Visible CVs, ID numbers, payslips or any personal information</li>
+      </ul></div>
+  </div>
+
+  <div class="block">
+    <h3>Text on images</h3>
+    <figure class="overlay-demo">
+      <img src="assets/photos/team-1.jpg" alt="" />
+      <div class="ov"></div>
+      <div class="tx"><b>Hire people who raise the room.</b><span>Recruitment, payroll and HR compliance, handled with care.</span></div>
+    </figure>
+    <p class="prose">Put text on a calm area of the photo, or add a Deep Rise overlay that fades from 85% to 0% across the image. Text on photos is white, with headlines in Roboto Black. Round photo corners to 18px on screens.</p>
+  </div>
+
+  <div class="note"><span class="ms" aria-hidden="true">policy</span><p><strong>Consent comes first.</strong> Only photograph or publish real candidates, clients, learners or staff with their written permission, in line with POPIA. Record the consent with the image. Credit stock photos where the licence asks for it.</p></div>
+</section>
+
+<!-- ================= 08 VOICE ================= -->
+<section class="chapter" id="voice" aria-labelledby="voice-h">
+  <div class="ch-head">
+    <div class="ch-num"><span class="mk">08</span><span class="eyebrow">Voice &amp; tone</span></div>
+    <h2 class="ch-title" id="voice-h">We sound like a capable friend.</h2>
+    <p class="lead">Professional, clean and modern, and always human, warm and supportive. We write short, clear sentences that lead to an action. No corporate jargon.</p>
+  </div>
+
+  <div class="block">
+    <h3>Four voice principles</h3>
+    <div class="g2">
+      <div class="card"><h4>1. Talk to people</h4><p>Write to one person, using “you” and “we”. Say people, team and candidate, not “human capital” or “headcount”.</p></div>
+      <div class="card"><h4>2. Keep it clear</h4><p>Short sentences, everyday words and one idea per paragraph. If a 15-year-old wouldn’t understand it, rewrite it.</p></div>
+      <div class="card"><h4>3. Be warm and honest</h4><p>Show empathy, especially when the news isn’t good. Never overpromise. Only publish facts and figures we can prove.</p></div>
+      <div class="card"><h4>4. Lead to action</h4><p>Tell people what happens next and what to do: “Submit your CV”, “Book a seat”, “Request talent”.</p></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>Tone by situation</h3>
+    <p class="prose">Our voice stays the same. Our tone adjusts to the person and the moment.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Situation</th><th>Tone</th><th>Sounds like</th></tr></thead>
+        <tbody>
+          <tr><td>Business owners &amp; managers</td><td>Confident, practical, efficient</td><td>“Tell us what you need. We’ll send a shortlist of people who fit.”</td></tr>
+          <tr><td>Job seekers</td><td>Warm, encouraging, honest</td><td>“Send us your CV and a real consultant will read it.”</td></tr>
+          <tr><td>Training delegates</td><td>Motivating, hands-on</td><td>“Practical skills you can use at work on Monday.”</td></tr>
+          <tr><td>Discipline, investigations, CCMA</td><td>Calm, neutral, precise</td><td>“Here’s what happens next, and what your rights are at each step.”</td></tr>
+          <tr><td>Unsuccessful candidates</td><td>Kind, specific, forward-looking</td><td>“This role went to another candidate. We’d like to keep your CV for roles that fit.”</td></tr>
+          <tr><td>Social media</td><td>Friendly and upbeat, still professional</td><td>“We’re hiring in Cape Town. Here’s what makes this role special.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>Words we use</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>We say</th><th>Instead of</th></tr></thead>
+        <tbody>
+          <tr><td>people, team, staff</td><td>human capital, headcount, resources</td></tr>
+          <tr><td>candidate, job seeker</td><td>applicant pool, talent stock</td></tr>
+          <tr><td>match, fit, the right person</td><td>leverage synergies, best-in-class talent solutions</td></tr>
+          <tr><td>help, support, look after</td><td>facilitate, action, operationalise</td></tr>
+          <tr><td>start, use, about</td><td>commence, utilise, in respect of</td></tr>
+          <tr><td>a consultant reviews every CV</td><td>applications are processed</td></tr>
+          <tr><td>smart tools, AI-assisted</td><td>our AI picks your candidate</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>Before and after</h3>
+    <div class="ba-list">
+      <div class="ba"><div class="ctx">Closing line of a job advert</div>
+        <div class="before"><span class="lbl"><svg aria-hidden="true"><use href="#i-no"/></svg>Before</span><p>Should you not receive a response within 14 days, please consider your application unsuccessful.</p></div>
+        <div class="after"><span class="lbl"><svg aria-hidden="true"><use href="#i-ok"/></svg>After</span><p>A HumanRise consultant reads every application. If this role isn’t the one, we’ll keep your CV (with your permission) and look out for roles that fit.</p></div></div>
+      <div class="ba"><div class="ctx">A business proposal</div>
+        <div class="before"><span class="lbl"><svg aria-hidden="true"><use href="#i-no"/></svg>Before</span><p>We leverage best-in-class talent acquisition solutions to optimise your human capital.</p></div>
+        <div class="after"><span class="lbl"><svg aria-hidden="true"><use href="#i-ok"/></svg>After</span><p>We find people who fit your team, and we handle the HR detail so you can focus on growth.</p></div></div>
+      <div class="ba"><div class="ctx">A disciplinary matter</div>
+        <div class="before"><span class="lbl"><svg aria-hidden="true"><use href="#i-no"/></svg>Before</span><p>Don’t worry, we’ll sort this out quickly!</p></div>
+        <div class="after"><span class="lbl"><svg aria-hidden="true"><use href="#i-ok"/></svg>After</span><p>We’ll guide you through each step and make sure the process is fair, lawful and properly recorded.</p></div></div>
+      <div class="ba"><div class="ctx">Talking about AI</div>
+        <div class="before"><span class="lbl"><svg aria-hidden="true"><use href="#i-no"/></svg>Before</span><p>Our AI finds your perfect candidate in seconds.</p></div>
+        <div class="after"><span class="lbl"><svg aria-hidden="true"><use href="#i-ok"/></svg>After</span><p>Smart tools speed up our search. A HumanRise consultant reviews every CV and every shortlist.</p></div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>Taglines and lines</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Line</th><th>Role</th><th>Where</th></tr></thead>
+        <tbody>
+          <tr><td><b>Overcoming Limits.</b></td><td>Tagline and sign-off</td><td>With the logo, footers, email signatures, the end of adverts and videos</td></tr>
+          <tr><td>Raising People. Raising Potential.</td><td>Headline line</td><td>Campaigns, banners, website hero sections</td></tr>
+          <tr><td>Hire people who raise the room.</td><td>For businesses</td><td>Business pages, proposals, LinkedIn</td></tr>
+          <tr><td>Building your career, not just your CV.</td><td>For individuals (with the Career Cat)</td><td>Career-enhancement content</td></tr>
+          <tr><td>Let’s raise potential together.</td><td>Call to action</td><td>Closing sections, invitations</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small">Use one line per piece. Don’t stack them.</p>
+  </div>
+
+  <div class="block">
+    <h3>Boilerplate: about HumanRise</h3>
+    <p class="prose">Copy these as they are for press releases, partner websites, tenders and event programmes.</p>
+    <div class="boiler">
+      <div><span class="lbl">Short · 25 words</span><p class="txt">HumanRise is a people-first HR and recruitment partner based in Cape Town, helping businesses and individuals across South Africa overcome their limits.</p></div>
+      <div><span class="lbl">Medium · 55 words</span><p class="txt">HumanRise is a people-first HR and recruitment partner. We connect great businesses with great people, matching on skills and on fit, and support teams with HR, POPIA-ready compliance and practical, accredited training. Based in Cape Town and working nationally, we are human-led and AI-assisted, and we help people and teams overcome their limits.</p></div>
+      <div><span class="lbl">Long · 110 words</span><p class="txt">HumanRise ZA (Pty) Ltd is a people-first HR and recruitment partner based in Cape Town, serving clients across South Africa. We place permanent, temporary and contract candidates, matching on skills and culture fit, with psychometric testing where it helps. For businesses, we provide outsourced HR support, from contracts and policies to payroll and disciplinary guidance, with POPIA-compliant practice built in. Our training courses, some QCTO-accredited, build capable and motivated teams and prepare first-time job seekers for work. We are human-led and AI-assisted: modern tools help us work faster, and a real consultant makes every decision. Our promise is simple: Overcoming Limits.</p></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>Writing style</h3>
+    <div class="tbl-wrap">
+      <table>
+        <tbody>
+          <tr><th scope="row">Brand name</th><td><b>HumanRise</b>, always one word with a capital H and R. Never “Human Rise”, “Humanrise” or “HUMANRISE” in running text. Possessive: HumanRise’s.</td></tr>
+          <tr><th scope="row">Legal name</th><td>HumanRise ZA (Pty) Ltd on contracts, invoices, letterheads and legal footers.</td></tr>
+          <tr><th scope="row">Tagline</th><td>Overcoming Limits, in title case. Add a full stop when it stands alone as a sign-off.</td></tr>
+          <tr><th scope="row">Spelling</th><td>South African English: colour, organisation, programme, centre, licence (noun), enrol, practise (verb).</td></tr>
+          <tr><th scope="row">Dates and times</th><td>1 October 2026 · Mon–Fri, 08:00–17:00</td></tr>
+          <tr><th scope="row">Numbers and money</th><td>One to nine in words, 10 and up in numerals. R2 000 and R15 500 (space as the thousands separator, no space after R).</td></tr>
+          <tr><th scope="row">Phone</th><td>021 001 8094 locally, +27 21 001 8094 internationally.</td></tr>
+          <tr><th scope="row">Acronyms</th><td>Spell them out the first time: Protection of Personal Information Act (POPIA), Quality Council for Trades and Occupations (QCTO), Commission for Conciliation, Mediation and Arbitration (CCMA).</td></tr>
+          <tr><th scope="row">Ampersands</th><td>“&amp;” in navigation and headings (HR &amp; Compliance). “and” in sentences.</td></tr>
+          <tr><th scope="row">Inclusive language</th><td>Gender-neutral titles (chairperson, salesperson) and “they” for an unknown person. No age-coded phrases like “young and dynamic” in adverts.</td></tr>
+          <tr><th scope="row">Exclamation marks</th><td>Rarely, at most one per post. Never in sensitive HR matters.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 09 APPLICATIONS ================= -->
+<section class="chapter" id="applications" aria-labelledby="apps-h">
+  <div class="ch-head">
+    <div class="ch-num"><span class="mk">09</span><span class="eyebrow">Applications</span></div>
+    <h2 class="ch-title" id="apps-h">The brand at work.</h2>
+    <p class="lead">Ready-made layouts for the things we produce most. Copy the structure, swap in your content, and keep the proportions.</p>
+  </div>
+
+  <div class="block">
+    <h3>Website</h3>
+    <div class="mock web" role="img" aria-label="Website hero layout mock-up">
+      <div class="web-bar"><i></i><i></i><i></i><span>humanrise.co.za</span></div>
+      <div class="web-nav"><img src="assets/logo/humanrise-logo-colour.png" alt="" /><span class="on">Home</span><span>About</span><span>Services</span><span>For Businesses</span><span>Jobs</span><span class="btn">Contact</span></div>
+      <div class="web-hero">
+        <img class="wm" src="assets/star/star-faint.png" alt="" />
+        <p class="k">People-first HR &amp; Recruitment</p>
+        <p class="h">Overcoming<br /><span>Limits.</span></p>
+        <p class="s">Every great career and every great team starts with one good match.</p>
+        <div class="ctas"><span class="c1">I’m hiring</span><span class="c2">Browse jobs</span></div>
+      </div>
+    </div>
+    <ul class="prose">
+      <li>White pages with Mist and Sky sections. A sticky header with the logo top left, and a single primary button.</li>
+      <li>On mobile: a sticky bottom navigation and a floating “Book a consultation” button.</li>
+      <li>Developers: link <span class="mono">brand/tokens.css</span> for every colour, size, radius and shadow in this guide.</li>
+      <li>Show trust signals: POPIA, the registered company name and QCTO accreditation on the courses that hold it.</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3>Social media posts</h3>
+    <p class="prose">Square 1080 × 1080px (or 1200 × 1200px for LinkedIn). Use one message, one star and one action per post. The logo goes top left at about 22% of the width, and the white logo goes on dark posts.</p>
+    <div class="mocks three">
+      <figure>
+        <div class="mock sq p-hire" role="img" aria-label="Vacancy post template">
+          <img class="wm" src="assets/star/star-faint.png" alt="" />
+          <img class="lg" src="assets/logo/humanrise-logo-colour.png" alt="" />
+          <div class="body"><span class="k">We’re hiring</span><span class="t">Payroll Administrator</span><span class="m">Cape Town · Permanent</span><span class="cta">Apply at jobs.humanrise.co.za</span></div>
+        </div>
+        <figcaption class="cap"><b>Vacancy.</b> White, faint star and a purple action. The role shown is an example.</figcaption>
+      </figure>
+      <figure>
+        <div class="mock sq p-train" role="img" aria-label="Training course post template">
+          <img class="wm" src="assets/star/star-white.png" alt="" />
+          <img class="lg" src="assets/logo/humanrise-logo-white.png" alt="" />
+          <span class="k">Training &amp; Development</span><span class="t">My Team Motivator</span><span class="badge">QCTO accredited</span><span class="s">Move from control to motivation.</span><span class="f">Book a seat: training@humanrise.co.za</span>
+        </div>
+        <figcaption class="cap"><b>Training.</b> Deep Rise ground with a white logo and star.</figcaption>
+      </figure>
+      <figure>
+        <div class="mock sq p-quote" role="img" aria-label="Values post template">
+          <img class="wm" src="assets/star/star-white.png" alt="" />
+          <span class="q">The right match beats a fast one.</span><span class="s">Fit over filling · one of our values</span>
+          <img class="lg" src="assets/logo/humanrise-logo-white.png" alt="" />
+        </div>
+        <figcaption class="cap"><b>Insight or value.</b> Star Purple ground with a short statement.</figcaption>
+      </figure>
+    </div>
+    <div class="note"><span class="ms" aria-hidden="true">edit_note</span><p><strong>Caption template:</strong> a hook line, two or three short lines of detail, one call to action with a link, then #HumanRise #OvercomingLimits and up to three topic tags such as #Hiring #CapeTownJobs #HRSouthAfrica. Tag partners and clients only with their permission.</p></div>
+  </div>
+
+  <div class="block">
+    <h3>Profiles and banners</h3>
+    <div class="li-wrap">
+      <div class="mock li-banner" role="img" aria-label="LinkedIn banner layout">
+        <img class="wm" src="assets/star/star-white.png" alt="" />
+        <div><b>Overcoming Limits.</b><span>People-first recruitment, HR &amp; training · humanrise.co.za</span></div>
+      </div>
+      <div class="li-under"><img src="assets/star/humanrise-avatar.png" alt="HumanRise avatar: white star on Star Purple" /><div><b>HumanRise</b><span>Profile image and cover banner</span></div></div>
+    </div>
+    <ul class="prose">
+      <li><b>Profile image:</b> the full logo on white where the platform shows it at 120px or larger. Otherwise use the star avatar (<span class="mono">star/humanrise-avatar.png</span>), which works for WhatsApp, favicons and small app icons.</li>
+      <li><b>LinkedIn cover:</b> 1128 × 191px, Star Purple, with text on the right. The profile image covers the bottom-left corner.</li>
+      <li>Use the same name everywhere (HumanRise) and the medium boilerplate as the bio.</li>
+    </ul>
+  </div>
+
+  <div class="block flowing">
+    <h3>Job adverts</h3>
+    <p class="prose">Every vacancy follows the same structure, on our website, LinkedIn and job boards. Point applications to <b>jobs.humanrise.co.za</b> so every candidate goes through the same secure, POPIA-compliant form.</p>
+    <div class="ad">
+      <div class="ad-head"><span class="k">We’re hiring</span><b>[Job title]</b><span>[Area, City] · [Permanent / Temporary / Contract] · [Salary, if the client discloses it]</span></div>
+      <div class="ad-body">
+        <div class="ad-sec"><h4>About the role</h4><div><p>Two or three warm, plain sentences on what the job is and why it matters.</p><p class="eg">Example: “Our client, a growing Cape Town retailer, needs someone who loves getting the details right.”</p></div></div>
+        <div class="ad-sec"><h4>What you’ll do</h4><div><p>Four to six bullet points, each starting with a verb.</p></div></div>
+        <div class="ad-sec"><h4>What you’ll bring</h4><div><p>Four to six points. Keep must-haves separate from nice-to-haves.</p></div></div>
+        <div class="ad-sec"><h4>Why you’ll like it</h4><div><p>Team, growth and benefits, as the client confirms them.</p></div></div>
+        <div class="ad-sec"><h4>How to apply</h4><div><p>“Apply at jobs.humanrise.co.za. A HumanRise consultant reviews every application.” Add the closing date.</p></div></div>
+        <div class="ad-sec"><h4>Compliance lines</h4><div><p>The POPIA line (chapter 10), plus the client’s employment equity statement where it applies.</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>Email signature</h3>
+    <div class="sig">
+      <div class="sig-in">
+        <div class="l"><img src="assets/logo/humanrise-logo-email.png" alt="HumanRise" /></div>
+        <div class="r"><strong>Full Name</strong><span class="role">Job title</span><br />021 001 8094 · name@humanrise.co.za<br /><span class="web">humanrise.co.za</span> · Live jobs: jobs.humanrise.co.za<br /><span class="tag">Overcoming Limits.</span></div>
+      </div>
+      <p class="sig-legal">This email and any attachments are confidential and intended only for the addressee. HumanRise processes personal information in line with the Protection of Personal Information Act (POPIA). Read our privacy policy at humanrise.co.za.</p>
+    </div>
+    <p class="prose">Arial, a 120px logo, one Star Purple divider and no extra images, quotes or banners. Copy this HTML into your email client’s signature settings and replace the details in brackets.</p>
+    <div class="code">
+      <button class="copy" type="button" data-copy="sig-code">Copy HTML</button>
+<pre id="sig-code">&lt;table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;color:#23222B;"&gt;
+  &lt;tr&gt;
+    &lt;td style="padding-right:16px;border-right:2px solid #7869BC;vertical-align:top;"&gt;
+      &lt;a href="https://humanrise.co.za"&gt;&lt;img src="https://humanrise.co.za/brand/assets/logo/humanrise-logo-email.png" width="120" alt="HumanRise" style="display:block;border:0;"&gt;&lt;/a&gt;
+    &lt;/td&gt;
+    &lt;td style="padding-left:16px;vertical-align:top;font-size:13px;line-height:1.5;"&gt;
+      &lt;strong style="font-size:15px;color:#456285;"&gt;[Full Name]&lt;/strong&gt;&lt;br&gt;
+      &lt;span style="color:#6A6782;"&gt;[Job title]&lt;/span&gt;&lt;br&gt;
+      021 001 8094 · &lt;a href="mailto:[name]@humanrise.co.za" style="color:#23222B;text-decoration:none;"&gt;[name]@humanrise.co.za&lt;/a&gt;&lt;br&gt;
+      &lt;a href="https://humanrise.co.za" style="color:#5A4E8D;font-weight:bold;text-decoration:none;"&gt;humanrise.co.za&lt;/a&gt; · Live jobs: &lt;a href="https://jobs.humanrise.co.za" style="color:#5A4E8D;text-decoration:none;"&gt;jobs.humanrise.co.za&lt;/a&gt;&lt;br&gt;
+      &lt;span style="color:#7869BC;font-weight:bold;"&gt;Overcoming Limits.&lt;/span&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;p style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6A6782;max-width:560px;"&gt;This email and any attachments are confidential and intended only for the addressee. HumanRise processes personal information in line with the Protection of Personal Information Act (POPIA). Read our privacy policy at humanrise.co.za.&lt;/p&gt;</pre>
+    </div>
+    <p class="small">The logo address works once the <span class="mono">brand/</span> folder is live on humanrise.co.za.</p>
+  </div>
+
+  <div class="block">
+    <h3>Business cards</h3>
+    <div class="mocks two">
+      <figure><div class="mock card-mock bc-front" role="img" aria-label="Business card front"><img src="assets/logo/humanrise-logo-colour.png" alt="" /></div><figcaption class="cap">Front: the logo centred on white.</figcaption></figure>
+      <figure><div class="mock card-mock bc-back" role="img" aria-label="Business card back">
+        <img class="wm" src="assets/star/star-white.png" alt="" />
+        <span class="n">Full Name</span><span class="r">Job title</span>
+        <span class="c">021 001 8094<br />name@humanrise.co.za<br />humanrise.co.za</span>
+        <span class="tg">Overcoming Limits.</span>
+      </div><figcaption class="cap">Back: Deep Rise with the white star bleeding off the corner.</figcaption></figure>
+    </div>
+    <p class="small">90 × 55mm with 3mm bleed, on 350gsm matt board. Name in Roboto Bold 9pt, details in Regular 7.5pt. Keep text 5mm inside the trim.</p>
+  </div>
+
+  <div class="block">
+    <h3>Letterhead and documents</h3>
+    <div class="g2" style="align-items:start">
+      <figure><div class="mock a4" role="img" aria-label="A4 letterhead layout">
+        <img class="wm" src="assets/star/star-faint.png" alt="" />
+        <div class="top"><img src="assets/logo/humanrise-logo-colour.png" alt="" /><div>info@humanrise.co.za<br />021 001 8094<br />humanrise.co.za</div></div>
+        <div class="meta">1 October 2026<br />[Recipient name]<br />[Company]</div>
+        <div class="ttl">Proposal: recruitment support</div>
+        <div class="lines"><i></i><i></i><i></i><i class="s"></i></div>
+        <div class="lines"><i></i><i></i><i></i><i></i><i class="s"></i></div>
+        <div class="lines"><i></i><i></i><i class="s"></i></div>
+        <div class="lines"><i></i><i></i><i></i><i class="s"></i></div>
+        <div class="foot">HumanRise ZA (Pty) Ltd · Reg. no. [to be added] · Cape Town, South Africa<br />We process personal information in line with POPIA.</div>
+      </div></figure>
+      <ul class="prose">
+        <li><b>A4</b> with 20mm margins. The logo goes top left at 40mm wide.</li>
+        <li>Contact details top right in Roboto Regular 8pt.</li>
+        <li>Body in Roboto 10.5pt (Arial in editable Word files), Ink on white, left-aligned.</li>
+        <li>Headings in Roboto Black, with the faint star cropped in the bottom-right corner.</li>
+        <li>The footer carries the legal name, registration number, city and the POPIA line.</li>
+        <li>Use for proposals, quotes, contracts, policies, handbooks and certificates.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>Presentations and training material</h3>
+    <div class="mocks two">
+      <figure><div class="mock slide" role="img" aria-label="Title slide layout">
+        <img class="wm" src="assets/star/star-faint.png" alt="" />
+        <span class="k">Training &amp; Development</span><span class="t">Managing Workplace Discipline</span><span class="s">Handle misconduct lawfully and fairly.</span>
+        <img class="lg" src="assets/logo/humanrise-logo-colour.png" alt="" />
+      </div><figcaption class="cap">Title slide</figcaption></figure>
+      <figure><div class="mock slide2" role="img" aria-label="Content slide layout with three numbered steps">
+        <span class="t">What you’ll learn</span>
+        <ol><li><span class="mk">1</span><b>Classify misconduct</b>Know what you’re dealing with.</li><li><span class="mk">2</span><b>Investigate fairly</b>Gather facts without bias.</li><li><span class="mk">3</span><b>Run the hearing</b>Document it and reduce CCMA risk.</li></ol>
+        <div class="ft"><img src="assets/logo/humanrise-logo-colour.png" alt="" /><span>HumanRise · Managing Workplace Discipline</span></div>
+      </div><figcaption class="cap">Content slide using the rising path</figcaption></figure>
+    </div>
+    <ul class="prose">
+      <li>16:9 format, white backgrounds and one idea per slide. Section dividers can use Deep Rise or Star Purple with the white logo.</li>
+      <li>Write course titles exactly as listed in chapter 02. Show “QCTO accredited” only on accredited courses (currently My Team Motivator and Workplace Preparation).</li>
+      <li>Workbooks and certificates use the letterhead layout with the course title in Roboto Black.</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3>Pull-up banner</h3>
+    <div class="banner-wrap">
+      <div class="mock banner" role="img" aria-label="Pull-up banner layout">
+        <img class="lg" src="assets/logo/humanrise-logo-colour.png" alt="" />
+        <span class="h">Overcoming <span>Limits.</span></span>
+        <span class="s">Recruitment · HR &amp; Compliance · Training</span>
+        <img class="ph" src="assets/photos/team-1.jpg" alt="" />
+        <span class="bt">humanrise.co.za</span>
+      </div>
+      <ul class="prose">
+        <li>850 × 2000mm. Logo in the top quarter, at eye level.</li>
+        <li>One line, three services and one photo. Nothing else.</li>
+        <li>Website in white on a Deep Rise base band.</li>
+        <li>Keep text out of the bottom 200mm (shown striped), which the stand and the crowd hide.</li>
+        <li>Supply print files as vector PDFs with images at 150dpi at full size.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 10 PARTNERS ================= -->
+<section class="chapter" id="partners" aria-labelledby="partners-h">
+  <div class="ch-head">
+    <div class="ch-num"><span class="mk">10</span><span class="eyebrow">Partners &amp; linking</span></div>
+    <h2 class="ch-title" id="partners-h">Linking with HumanRise.</h2>
+    <p class="lead">For partners, clients, training venues, job boards and media who want to mention us, link to us or show our logo next to theirs. Thank you for representing us well.</p>
+  </div>
+
+  <div class="block">
+    <h3>Mentioning us</h3>
+    <ul class="prose">
+      <li>Write <b>HumanRise</b>, one word with a capital H and R. Use <b>HumanRise ZA (Pty) Ltd</b> in contracts.</li>
+      <li>Describe us as “people-first HR and recruitment partner”, or use a boilerplate from chapter 08.</li>
+      <li>For credits, use: “Recruitment partner: HumanRise”, “Training by HumanRise” or “In partnership with HumanRise”.</li>
+      <li>Please don’t present HumanRise as endorsing a product or service without our written agreement.</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3>Co-branding</h3>
+    <div class="g2">
+      <figure class="spec"><div class="lockup"><img class="hr" src="assets/logo/humanrise-logo-colour.png" alt="HumanRise" /><span class="div"></span><img class="cc" src="assets/partners/careercat-logo.png" alt="the Career Cat" /></div>
+        <figcaption class="cap" style="padding:0 16px 14px"><b>Partnership lock-up.</b> Equal partners: logos at the same visual size, a 1.5px Lavender 200 divider, and 2X clear space around each logo.</figcaption></figure>
+      <figure class="spec"><div class="endorse"><span>Career coaching by the Career Cat,</span><span>in partnership with</span><img src="assets/logo/humanrise-logo-colour.png" alt="HumanRise" /></div>
+        <figcaption class="cap" style="padding:0 16px 14px"><b>Endorsement.</b> On partner-led material, our logo sits after “in partnership with” at no less than the minimum size.</figcaption></figure>
+    </div>
+    <div class="dolist">
+      <div class="yes"><h4><svg aria-hidden="true"><use href="#i-ok"/></svg>Do</h4><ul><li>Use our master logo files, unaltered</li><li>Give each logo its own clear space</li><li>Use the full-colour logo on white, and the white logo on dark colours</li><li>Send the artwork to us for approval before it is printed or published</li></ul></div>
+      <div class="nope"><h4><svg aria-hidden="true"><use href="#i-no"/></svg>Don’t</h4><ul><li>Merge our logo with yours or create a combined mark</li><li>Recolour either logo to match the other</li><li>Make our logo smaller than the minimum size, or larger than the host brand’s on its own material</li><li>Use the star on its own in co-branded work</li></ul></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>Linking online</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Link to</th><th>Address</th><th>Suggested link text</th></tr></thead>
+        <tbody>
+          <tr><td>HumanRise home</td><td class="mono">https://humanrise.co.za</td><td>HumanRise · people-first HR &amp; recruitment</td></tr>
+          <tr><td>Live vacancies</td><td class="mono">https://jobs.humanrise.co.za</td><td>Browse jobs at HumanRise</td></tr>
+          <tr><td>Submit a CV</td><td class="mono">https://humanrise.co.za/submit-cv.html</td><td>Submit your CV to HumanRise</td></tr>
+          <tr><td>Business services</td><td class="mono">https://humanrise.co.za/business.html</td><td>Recruitment and HR support for businesses</td></tr>
+          <tr><td>Training courses</td><td class="mono">https://humanrise.co.za/services.html</td><td>HumanRise training courses</td></tr>
+          <tr><td>Contact</td><td class="mono">https://humanrise.co.za/contact.html</td><td>Contact HumanRise</td></tr>
+          <tr><td>LinkedIn</td><td class="mono">https://www.linkedin.com/company/humanriseza/</td><td>Follow HumanRise on LinkedIn</td></tr>
+          <tr><td>Career enhancement</td><td class="mono">https://careercat.co.za</td><td>CV writing and coaching with the Career Cat</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="prose">
+      <li>When you show our logo online, link it to https://humanrise.co.za.</li>
+      <li>Link to <b>jobs.humanrise.co.za</b> rather than copying our adverts, so candidates always see current roles and apply through our secure form.</li>
+      <li>Use descriptive link text, never “click here”.</li>
+      <li>Tag <b>HumanRise</b> on LinkedIn and use #HumanRise and #OvercomingLimits.</li>
+      <li>Add tracking parameters so we can thank you for referrals. For example: <span class="mono" style="word-break:break-all">https://humanrise.co.za/?utm_source=careercat&amp;utm_medium=referral&amp;utm_campaign=partner-page</span></li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3>Getting approval</h3>
+    <ol class="path-steps">
+      <li><span class="mk">1</span><h4>Draft with this guide</h4><p>Use the master files, colours and wording in these chapters.</p></li>
+      <li><span class="mk">2</span><h4>Send it to us</h4><p>Email info@humanrise.co.za with the artwork, where it will appear, dates and quantities.</p></li>
+      <li><span class="mk">3</span><h4>Approve and publish</h4><p>We reply with approval or changes. Please allow time for this before print deadlines.</p></li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <h3>Compliance and trust lines</h3>
+    <div class="boiler">
+      <div><span class="lbl">POPIA · forms and adverts</span><p class="txt">By submitting your information, you agree that HumanRise may process your personal information for recruitment purposes, in line with the Protection of Personal Information Act (POPIA). Read our privacy policy at humanrise.co.za.</p></div>
+      <div><span class="lbl">AI use · where relevant</span><p class="txt">HumanRise uses AI-assisted tools to help manage applications. A HumanRise consultant reviews every application, and no decision is made by automated processing alone.</p></div>
+      <div><span class="lbl">Accreditation</span><p class="txt">Show “QCTO accredited” only next to accredited courses (currently My Team Motivator and Workplace Preparation), never next to the HumanRise logo on its own.</p></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>The brand kit</h3>
+    <p class="prose">Everything in this guide is in the <span class="mono">brand/</span> folder of the HumanRise website repository. Once published, it lives at <b>humanrise.co.za/brand/</b>. For vector or print-ready files, email info@humanrise.co.za.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Folder / file</th><th>Contents</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">index.html</td><td>These guidelines (web version)</td></tr>
+          <tr><td class="mono">HumanRise-CI-Guidelines.pdf</td><td>These guidelines (A4 PDF, for print and sharing)</td></tr>
+          <tr><td class="mono">tokens.css</td><td>Colour, type, radius and shadow variables for developers</td></tr>
+          <tr><td class="mono">assets/logo/</td><td>Full colour, white, Deep Rise, black and email logo files</td></tr>
+          <tr><td class="mono">assets/star/</td><td>Five star colourways and the profile avatar</td></tr>
+          <tr><td class="mono">assets/photos/</td><td>Approved example photographs (web size)</td></tr>
+          <tr><td class="mono">assets/partners/</td><td>Partner logos for approved lock-ups</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 11 CHECKLIST ================= -->
+<section class="chapter" id="checklist" aria-labelledby="check-h">
+  <div class="ch-head">
+    <div class="ch-num"><span class="mk">11</span><span class="eyebrow">Checklist</span></div>
+    <h2 class="ch-title" id="check-h">Before anything goes out.</h2>
+    <p class="lead">Ten quick checks for every post, advert, document or partner piece.</p>
+  </div>
+  <ul class="check">
+    <li><span>The logo comes from the master files, unaltered, with 2X clear space and above minimum size.</span></li>
+    <li><span>Full colour on white or light tints, white on dark colours. No mid-tones, no cream.</span></li>
+    <li><span>Colours come from the palette, with purple as the spark and plenty of white.</span></li>
+    <li><span>Text passes contrast: Ink, Deep Rise or Star Purple on white, and white on Deep Rise or Star Purple.</span></li>
+    <li><span>Type is Roboto (Arial for email and editable files), with headings and buttons in sentence case.</span></li>
+    <li><span>No more than one star, used as an outline, unfilled and not redrawn.</span></li>
+    <li><span>Photos show real, diverse people in natural light, with consent recorded.</span></li>
+    <li><span>Copy is short, warm and jargon-free, and ends with one clear action.</span></li>
+    <li><span>Facts and figures are true and provable. AI is described as assisting people, never deciding.</span></li>
+    <li><span>Legal lines are in place: the POPIA statement, the registered name where needed, and QCTO only on accredited courses.</span></li>
+  </ul>
+</section>
+
+<!-- ================= 12 NOTES ================= -->
+<section class="chapter" id="notes" aria-labelledby="notes-h">
+  <div class="ch-head">
+    <div class="ch-num"><span class="mk">12</span><span class="eyebrow">Notes &amp; open items</span></div>
+    <h2 class="ch-title" id="notes-h">A living guide.</h2>
+    <p class="lead">This is version 1.0. These items are still open and will be closed in the next update.</p>
+  </div>
+
+  <div class="block">
+    <h3>Open items</h3>
+    <ol class="open">
+      <li><span><b>Vector logo master.</b> Export SVG and PDF versions of the logo and star from the original design file for print, signage and embroidery.</span></li>
+      <li><span><b>Update the master artwork.</b> Remove the light-blue strip under the rising I in the original file, and retire the cream-background exports. The cleaned PNGs in this kit already reflect this.</span></li>
+      <li><span><b>Print colour.</b> Match Star Purple, Deep Rise, Rise Blue and Human Lavender to Pantone references with your printer, and record them here.</span></li>
+      <li><span><b>Profile avatar.</b> The avatar uses a slightly heavier star line so it stays visible at small sizes. Approve it, or replace it with an original small-size drawing.</span></li>
+      <li><span><b>Registration number.</b> Add the company registration number to the letterhead and legal footers.</span></li>
+      <li><span><b>Social channels.</b> Confirm handles beyond LinkedIn, and add them to chapter 10.</span></li>
+      <li><span><b>Website alignment.</b> Buttons are confirmed as sentence case, which supersedes the uppercase rule in the June 2026 design spec. Small eyebrow labels on the site use Rise Blue (3.7:1). Switch them to Star Purple or Deep Rise to meet WCAG AA.</span></li>
+      <li><span><b>AI commitments.</b> Confirm that the three commitments in chapter 02 match how HumanRise uses AI today, and review them as tools change.</span></li>
+    </ol>
+  </div>
+
+  <div class="block">
+    <h3>Version history</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Version</th><th>Date</th><th>Changes</th></tr></thead>
+        <tbody>
+          <tr><td>1.0</td><td>October 2026</td><td>First edition: story, logo, colour, type, elements, photography, voice, applications and partner guidance. Built from the colour palette, the website design specification (June 2026), the website questionnaire, humanrise.co.za and the designer’s notes on the logo.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer class="end">
+    <img class="logo-l" src="assets/logo/humanrise-logo-colour.png" alt="HumanRise" />
+    <img class="logo-d" src="assets/logo/humanrise-logo-white.png" alt="HumanRise" />
+    <p>Questions about the brand: info@humanrise.co.za · 021 001 8094<br />© 2026 HumanRise ZA (Pty) Ltd. Overcoming Limits.</p>
+  </footer>
+</section>
+
+  </main>
+</div>
+
+<script>
+(function(){
+  // Copy buttons
+  document.querySelectorAll('.copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = document.getElementById(btn.getAttribute('data-copy'));
+      if(!el) return;
+      var text = el.textContent;
+      function done(){ btn.textContent = 'Copied'; setTimeout(function(){ btn.textContent = 'Copy HTML'; }, 1800); }
+      function fallback(){
+        try{ var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Selected: press Ctrl+C'; }catch(e){}
+      }
+      try{ navigator.clipboard.writeText(text).then(done, fallback); }catch(e){ fallback(); }
+    });
+  });
+  // Highlight the current chapter in the rail
+  try{
+    var links = {};
+    document.querySelectorAll('.toc a').forEach(function(a){ links[a.getAttribute('href').slice(1)] = a; });
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting && links[e.target.id]){
+          Object.keys(links).forEach(function(k){ links[k].classList.remove('active'); });
+          links[e.target.id].classList.add('active');
+        }
+      });
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    document.querySelectorAll('section.chapter[id]').forEach(function(s){ io.observe(s); });
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

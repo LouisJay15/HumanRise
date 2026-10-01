@@ -1,0 +1,66 @@
+/* ===========================================================
+   HumanRise — brand design tokens  (CI Guidelines v1.0, October 2026)
+   Source: HumanRise Colour Palette (PDF) + CI Guidelines, brand/index.html
+   Link this file, then use the variables:  color: var(--hr-deep-rise);
+   =========================================================== */
+:root{
+  /* ---- Core palette ---- */
+  --hr-star-purple:    #7869BC;  /* primary: the star and the "n" — buttons, links, highlights */
+  --hr-deep-rise:      #456285;  /* primary dark: the rising I — headings, dark panels, footers */
+  --hr-rise-blue:      #6E86AE;  /* secondary: RISE — graphics, outlines, large text only */
+  --hr-human-lavender: #8E8AAE;  /* secondary: "Hum" — tints, dividers, decoration */
+  --hr-white:          #FFFFFF;  /* base background */
+  --hr-black:          #000000;  /* one-colour print only */
+
+  /* ---- Tint & shade ranges (100 = lightest tint, 400 = core, 700 = darkest shade) ---- */
+  --hr-lavender-100:#E2E1EA; --hr-lavender-200:#C6C4D6; --hr-lavender-300:#AAA7C2; --hr-lavender-400:#8E8AAE;
+  --hr-lavender-500:#6A6782; --hr-lavender-600:#474557; --hr-lavender-700:#23222B;
+  --hr-purple-100:#DDD9EE;   --hr-purple-200:#BBB4DD;   --hr-purple-300:#998ECC;   --hr-purple-400:#7869BC;
+  --hr-purple-500:#5A4E8D;   --hr-purple-600:#3C345E;   --hr-purple-700:#1E1A2F;
+  --hr-blue-100:#DAE0EA;     --hr-blue-200:#B6C2D6;     --hr-blue-300:#92A4C2;     --hr-blue-400:#6E86AE;
+  --hr-blue-500:#526482;     --hr-blue-600:#374357;     --hr-blue-700:#1B212B;
+  --hr-deep-100:#D0D7E0;     --hr-deep-200:#A2B0C2;     --hr-deep-300:#7389A3;     --hr-deep-400:#456285;
+  --hr-deep-500:#334963;     --hr-deep-600:#223142;     --hr-deep-700:#111821;
+
+  /* ---- Supporting neutrals ---- */
+  --hr-ink:  #23222B;   /* body text (Lavender 700), softer than pure black */
+  --hr-mist: #F7F6FB;   /* section backgrounds, cards */
+  --hr-sky:  #F4F7FA;   /* alternate section backgrounds */
+  --hr-line: #E2E1EA;   /* borders and dividers (Lavender 100) */
+
+  /* ---- Functional roles ---- */
+  --hr-text:            var(--hr-ink);
+  --hr-text-muted:      var(--hr-lavender-500);  /* 5.4:1 on white */
+  --hr-heading:         var(--hr-ink);
+  --hr-link:            var(--hr-purple-500);    /* small text links: 7.2:1 on white */
+  --hr-button-bg:       var(--hr-star-purple);   /* white text on it: 4.6:1 */
+  --hr-button-bg-hover: #6A5BB0;
+  --hr-eyebrow:         var(--hr-star-purple);   /* small uppercase labels: never Rise Blue */
+  --hr-trail:           var(--hr-lavender-200);  /* the dotted "rising path" */
+
+  /* ---- Typography ---- */
+  --hr-font: 'Roboto', Arial, Helvetica, sans-serif;
+  --hr-weight-light: 300; --hr-weight-regular: 400; --hr-weight-medium: 500;
+  --hr-weight-bold: 700;  --hr-weight-display: 900;
+  --hr-size-display: clamp(3rem, 2rem + 4vw, 4.875rem); /* 48–78px, home hero only */
+  --hr-size-h1: clamp(3rem, 2.4rem + 2vw, 4rem);        /* 48–64px */
+  --hr-size-h2: clamp(2rem, 1.7rem + 1vw, 2.5rem);      /* 32–40px */
+  --hr-size-h3: clamp(1.5rem, 1.4rem + .4vw, 1.75rem);  /* 24–28px */
+  --hr-size-lead: 1.25rem;                              /* 20px */
+  --hr-size-body: 1.0625rem;                            /* 17px (16–18px) */
+  --hr-size-small: .875rem;                             /* 14px */
+  --hr-size-eyebrow: .875rem;                           /* 14px, uppercase, +0.18em */
+  --hr-line-height-body: 1.6;
+  --hr-line-height-heading: 1.1;
+  --hr-tracking-heading: -0.02em;
+  --hr-tracking-eyebrow: 0.18em;
+
+  /* ---- Shape & depth ---- */
+  --hr-radius-button: 12px;  /* 8–12px */
+  --hr-radius-input: 10px;
+  --hr-radius-card: 18px;
+  --hr-radius-band: 26px;
+  --hr-shadow-card: 0 16px 36px rgba(69,98,133,.13);
+  --hr-shadow-button: 0 8px 22px rgba(120,105,188,.28);
+  --hr-shadow-icon: 0 6px 16px rgba(69,98,133,.12);
+}
